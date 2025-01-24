@@ -3,9 +3,11 @@ import { FaLinkedin, FaWhatsapp  } from 'react-icons/fa';
 export default function Header() {
   return (
     <>
-        <div className='bg-black'>
-            <header className="p-3 lg:p-0 lg:max-w-[1200px] m-auto grid grid-cols-1 lg:grid-cols-2 bg-black text-white">
-                <div></div>
+        <header className="bg-black">
+            <div className="p-3 lg:p-0 lg:max-w-[1200px] m-auto grid grid-cols-1 lg:grid-cols-2 bg-black text-white">
+                <div>
+                    
+                </div>
 
                 <div className='flex justify-between items-center '>
                     <ul className="flex gap-x-3 lg:gap-x-5 text-lg font-semibold uppercase">
@@ -41,8 +43,13 @@ export default function Header() {
                         </button>
                     </div>
                 </div>
-            </header>
-        </div>
+            </div>
+        </header>
+        
+        <section className='py-20 bg-black '>
+            <div className='bg-black lg:max-w-[1200px]'>
+            </div>
+        </section>
     </>
   )
 }
