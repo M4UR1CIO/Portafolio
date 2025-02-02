@@ -1,5 +1,14 @@
 
-export default function SegundaColumna() {
+import { Proyectos } from "../types"
+
+
+type SegundaColumnaProps = {
+    proyectos: Proyectos[]
+}
+
+export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
+
+
   return (
     <>
         {/* Segunda columna (Scroll) */}
@@ -23,7 +32,7 @@ export default function SegundaColumna() {
             </div>
 
             <ul id='experiencia' className="space-y-8">
-              <div className='lg:grid grid-cols-8 p-3 hover:bg-slate-800/55 borderborder-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 lg:mx-0 hover:scale-105 lg:hover:scale-100'>
+              <div className='lg:grid grid-cols-8 p-3 hover:bg-slate-800/55 borderborder-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 md:mx-7  lg:mx-0 hover:scale-105 lg:hover:scale-100'>
                 <header className='lg:pt-1 col-span-2 text-slate-500 uppercase text-sm font-medium'>
                     Agosto - Dic.
                     <span> 2024</span>
@@ -44,7 +53,7 @@ export default function SegundaColumna() {
                 </div>
               </div>
               
-              <div className='lg:grid grid-cols-8 mb-12 p-3 hover:bg-slate-800/55 borderborder-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 lg:mx-0 hover:scale-105 lg:hover:scale-100 items-start'>
+              <div className='lg:grid grid-cols-8 mb-12 p-3 hover:bg-slate-800/55 borderborder-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 hover:scale-105 lg:hover:scale-100 items-start'>
                 <header className='lg:pl-0 lg:pt-1 col-span-2 text-slate-500 uppercase text-sm font-medium'>
                   Feb. - Mayo
                   <span> 2024</span>
@@ -68,109 +77,45 @@ export default function SegundaColumna() {
                 id='proyectos' 
                 className="space-y-8"
             >
-              <div 
-                className='group lg:grid grid-cols-8  p-3 hover:bg-slate-800/50 borderborder-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 lg:mx-0 hover:scale-105 lg:hover:scale-100 items-start hover:cursor-pointer'
-              >
-                <header className=' lg:pt-1 col-span-2 text-slate-500 uppercase text-sm font-medium pb-6'>
-                  <img 
-                    className='rounded-md border-4 border-double border-slate-700 group-hover:border-slate-200 transition-all duration-300 ease-in-out'
-                    src="/images/Plataforma-Metricas.png" 
-                    alt="Imgen-Calculadora" 
-                  />
-                  
-                </header>
-                <div className='lg:pl-3 col-span-6'>
-                  <h2 className='text-slate-200 font-bold text-lg mb-3'>Plataforma de Métricas con la API Gaph de Meta</h2>
-                  <p className='text-sm mb-2'>
-                    Plataforma Web que muestra metricas de las redes sociales de Facebook e Instagram mediante graficos, usando la Api Graph de Meta. Los datos mostrados son en tiempo real y se pueden filtrar por fechas. Ademas de la descarga de un informe de ambas redes sociales.
-                  </p>
-                  <ul className='flex flex-wrap gap-3 text-sm pt-1 lg:p-1 items-center'>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>TypeScript</li>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>React</li>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>Python</li>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>Flask</li>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>MySQL</li>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>Tailwind</li>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>Api Graph de Meta</li>
-                  </ul>
-                </div>
-              </div>
+              {proyectos.map((proyecto) => (
+                <div 
+                  key={proyecto.id}
+                  className='group lg:grid grid-cols-8 p-3 hover:bg-slate-800/50 border border-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 hover:scale-105 lg:hover:scale-100 items-start hover:cursor-pointer'
+                  onClick={proyecto.id === '1' 
+                    ? () => '' : 
+                      () => window.open(proyecto.link, "_blank")}
+                >
+                  <header className='lg:pt-1 col-span-2 text-slate-500 uppercase text-sm font-medium pb-6'>
+                    <img 
+                      className=' md:w-80 rounded-md border-4 border-double border-slate-700 group-hover:border-slate-200 transition-all duration-300 ease-in-out'
+                      src={`/images/${proyecto.imagen}.png`} 
+                      alt={proyecto.name} 
+                    />
+                  </header>
 
-              <div 
-                className='group lg:grid grid-cols-8 p-3 hover:bg-slate-800/50 borderborder-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 lg:mx-0 hover:scale-105 lg:hover:scale-100 items-start hover:cursor-pointer'
-                onClick={() => window.open('https://dynamic-tartufo-ffc886.netlify.app/', '_blank')}
-              >
-                <header className='lg:pt-1 col-span-2 text-slate-500 uppercase text-sm font-medium pb-6'>
-                  <img 
-                    className='rounded-md border-4 border-double border-slate-700 group-hover:border-slate-200 transition-all duration-300 ease-in-out'
-                    src="/images/Calculadora.png" 
-                    alt="Imgen-Calculadora" 
-                  />
-                  
-                </header>
-                <div className='lg:pl-3 col-span-6'>
-                  <h2 className='text-slate-200 font-bold text-[1.1rem] mb-3'>Calculadora de Propinas y Consumo</h2>
-                  <p className='text-sm mb-2'>
-                    Aplicación web que permite calcular el monto total a pagar, incluyendo propinas. La interfaz es intuitiva y fácil de usar, permitiendo el acumulado de cada Menú y el porcentaje de propina deseado. La aplicación muestra el monto total a pagar, incluyendo la propina.
-                  </p>
-                  <ul className='flex flex-wrap gap-3 text-sm pt-1 lg:p-1 items-center'>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>TypeScript</li>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>React</li>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>Tailwind</li>
-                  </ul>
-                </div>
-              </div>
+                  <div className='lg:pl-3 col-span-6'>
+                    <h2 className='text-slate-200 font-bold text-lg mb-3'>{proyecto.title}</h2>
+                    
+                    <p className='text-sm mb-2'>
+                      {proyecto.content}
+                    </p>
+                    
+                    <ul className="flex flex-wrap gap-3 text-sm pt-1 lg:p-1 items-center">
+                      {proyecto.tecnologias.map((tecnologia, index )=> (
+                        <li
+                          key={index}
+                          className="p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium"
+                        >
+                          {tecnologia}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
 
-              <div 
-                className='group lg:grid grid-cols-8 p-3 hover:bg-slate-800/50 borderborder-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 lg:mx-0 hover:scale-105 lg:hover:scale-100 items-start hover:cursor-pointer'
-                onClick={() => window.open('https://curious-mermaid-67a8ad.netlify.app/', '_blank')}
-              >
-                <header className='lg:pt-1 col-span-2 text-slate-500 uppercase text-sm font-medium pb-6'>
-                  <img 
-                    className='rounded-md border-4 border-double border-slate-700 group-hover:border-slate-200 transition-all duration-300 ease-in-out'
-                    src="/images/Contador-Calorias.png" 
-                    alt="Imgen-Calculadora" 
-                  />
-                </header>
-                <div className='lg:pl-3 col-span-6'>
-                  <h2 className='text-slate-200 font-bold text-[1.1rem] mb-3'>Sistema de Control de Calorías</h2>
-                  <p className='text-sm mb-2'>
-                    Sistema web que permite llevar un contros de calorias quemadas y consumidas, ademas de mostrar el resumen de calorias consumidas y quemadas. Permitiendo el registro de alimentos y ejercicios. La interfaz es facil de usar.
-                  </p>
-                  <ul className='flex flex-wrap gap-3 text-sm pt-1 lg:p-1 items-center'>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>TypeScript</li>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>React</li>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>Tailwind</li>
-                  </ul>
                 </div>
-              </div>
-              
-              <div 
-                className='group lg:grid grid-cols-8 p-3 hover:bg-slate-800/50 borderborder-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 lg:mx-0 hover:scale-105 lg:hover:scale-100 items-start hover:cursor-pointer'
-                onClick={() => window.open('https://joyful-meringue-163536.netlify.app/', '_blank')}  
-              >
-                <header className='lg:pt-1 col-span-2 text-slate-500 uppercase text-sm font-medium pb-6'>
-                  <img 
-                    className='rounded-md border-4 border-double border-slate-700 group-hover:border-slate-200 transition-all duration-300 ease-in-out'
-                    src="/images/GuitarLA.png" 
-                    alt="Imgen-Calculadora" 
-                  />
-                  
-                </header>
-                <div className='lg:pl-3 col-span-6'>
-                  <h2 className='text-slate-200 font-bold text-[1.1rem] mb-3'>Pagina Web de GuitarLA</h2>
-                  <p className='text-sm mb-2'>
-                    Pagina Web que muestra diferentes productos de GuitarLA, tiene un diseño minimalista y facil de usar. Ademas de tener un carrito de compras
-                  </p>
-                  <ul className='flex flex-wrap gap-3 text-sm pt-1 lg:p-1 items-center'>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>TypeScript</li>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>React</li>
-                    <li className='p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium'>CSS</li>
-                  </ul>
-                </div>
-              </div>
-              
+              ))}
             </ul>
+          
           </div>
     </>
   )

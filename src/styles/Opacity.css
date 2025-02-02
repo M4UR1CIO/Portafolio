@@ -1,0 +1,10 @@
+/* Cuando se hace hover sobre un contenedor, opacar los otros contenedores */
+.group:hover ~ .group {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+/* Asegurarse de que el contenedor sobre el que se hace hover mantenga su opacidad */
+.group:hover {
+  opacity: 1;
+}
