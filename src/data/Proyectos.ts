@@ -7,7 +7,7 @@ export const proyectos : Proyectos[] = [
         title : 'Plataforma de Métricas con la API Gaph de Meta', 
         content: 'Plataforma Web que muestra metricas de las redes sociales de Facebook e Instagram mediante graficos, usando la Api Graph de Meta. Los datos mostrados son en tiempo real y se pueden filtrar por fechas. Ademas de la descarga de un informe de ambas redes sociales.',
         imagen: 'Plataforma-Metricas',
-        link: 'o',
+        link: '',
         tecnologias: ['TypeScript', 'React', 'Python', 'Flask', 'MySQL', 'Tailwind', 'Api Graph de Meta']
     },
         
@@ -46,5 +46,14 @@ export const proyectos : Proyectos[] = [
         imagen: 'Planificador-Gastos',
         link: 'https://leafy-conkies-4c381f.netlify.app/',
         tecnologias: ['TypeScript', 'React', 'Tailwind']
+    },
+    {
+        id: '6',
+        name: 'proyecto6',
+        title: 'Pagina Web Festival de Musica',
+        content: 'Pagina Web que muestra diferentes secciones, tiene un diseño minimalista',
+        imagen: 'Festival-Musica',
+        link: 'https://luminous-jelly-998350.netlify.app/',
+        tecnologias: ['JavaScript', 'SASS'],
     }
 ]

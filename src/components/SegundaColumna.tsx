@@ -1,6 +1,6 @@
-
+import { useState, useEffect } from "react"
 import { Proyectos } from "../types"
-
+import Modal from "./Modal"
 
 type SegundaColumnaProps = {
     proyectos: Proyectos[]
@@ -8,6 +8,21 @@ type SegundaColumnaProps = {
 
 export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
 
+  const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    // Cuando el modal está abierto, desactiva el scroll
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+
+    // Limpieza al desmontar el componente
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isOpen]); // Ejecuta el efecto cada vez que cambia isOpen
 
   return (
     <>
@@ -82,7 +97,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                   key={proyecto.id}
                   className='group lg:grid grid-cols-8 p-3 hover:bg-slate-800/50 border border-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 hover:scale-105 lg:hover:scale-100 items-start hover:cursor-pointer'
                   onClick={proyecto.id === '1' 
-                    ? () => '' : 
+                    ? () => setIsOpen(!isOpen) : 
                       () => window.open(proyecto.link, "_blank")}
                 >
                   <header className='lg:pt-1 col-span-2 text-slate-500 uppercase text-sm font-medium pb-6'>
@@ -111,12 +126,16 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                       ))}
                     </ul>
                   </div>
-
                 </div>
               ))}
             </ul>
-          
+            
+  
           </div>
+          <Modal 
+            isOpen={isOpen}
+            setIsOpen={setIsOpen}
+          />
     </>
   )
 }
