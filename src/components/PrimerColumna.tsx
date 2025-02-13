@@ -34,7 +34,7 @@ export default function PrimerColumna() {
                         </li>
                         <li
                             className='group max-w-[330px] space-y-1 p-2 hover:cursor-pointer border border-slate-900 hover:border-slate-800 hover:shadow-lg hover:shadow-slate-700 hover:transition-shadow duration-500 ease-in-out rounded-md'
-                            onClick={() => window.open("https://drive.google.com/file/d/19Wzb01K9xnQYVMmMtz1Wh4wBYwvMXNCB/view?usp=sharing", "_blank")}
+                            onClick={() => window.open("https://drive.google.com/file/d/12CtPEV_Feg-pVl69ZlkfV2sbLTg7xLYh/view?usp=sharing", "_blank")}
                         >
                             <span
                                 className="text-lg font-extralight text-slate-300 group-hover:text-slate-100 group-hover:underline transition-all duration-1500 ease-in-out"
