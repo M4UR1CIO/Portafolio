@@ -38,7 +38,7 @@ export default function PrimerColumna() {
                         >
                             <span
                                 className="text-lg font-extralight text-slate-300 group-hover:text-slate-100 group-hover:underline transition-all duration-1500 ease-in-out"
-                            >
+                               >
                                 Ver CV-MauricioPalomino
                             </span>
                         </li>
