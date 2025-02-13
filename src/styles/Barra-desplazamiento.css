@@ -1,0 +1,9 @@
+/* En src/index.css o el archivo global de estilos */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari y Opera */
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;  /* Internet Explorer */
+    scrollbar-width: none;     /* Firefox */
+}

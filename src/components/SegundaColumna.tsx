@@ -90,43 +90,45 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
 
             <ul 
                 id='proyectos' 
-                className="space-y-8"
+                className="group/list space-y-4"
             >
               {proyectos.map((proyecto) => (
-                <div 
+                <li 
                   key={proyecto.id}
-                  className='group lg:grid grid-cols-8 p-3 hover:bg-slate-800/50 border border-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 hover:scale-105 lg:hover:scale-100 items-start hover:cursor-pointer'
                   onClick={proyecto.id === '1' 
                     ? () => setIsOpen(!isOpen) : 
                       () => window.open(proyecto.link, "_blank")}
                 >
-                  <header className='lg:pt-1 col-span-2 text-slate-500 uppercase text-sm font-medium pb-6'>
-                    <img 
-                      className=' md:w-80 rounded-md border-4 border-double border-slate-700 group-hover:border-slate-200 transition-all duration-300 ease-in-out'
-                      src={`/images/${proyecto.imagen}.png`} 
-                      alt={proyecto.name} 
-                    />
-                  </header>
+                  <div className="group relative lg:grid grid-cols-8 p-3 hover:bg-slate-800/50 border border-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 hover:scale-105 lg:hover:scale-100 items-start hover:cursor-pointer lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
 
-                  <div className='lg:pl-3 col-span-6'>
-                    <h2 className='text-slate-200 font-bold text-lg mb-3'>{proyecto.title}</h2>
-                    
-                    <p className='text-sm mb-2'>
-                      {proyecto.content}
-                    </p>
-                    
-                    <ul className="flex flex-wrap gap-3 text-sm pt-1 lg:p-1 items-center">
-                      {proyecto.tecnologias.map((tecnologia, index )=> (
-                        <li
-                          key={index}
-                          className="p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium"
-                        >
-                          {tecnologia}
-                        </li>
-                      ))}
-                    </ul>
+                    <header className='lg:pt-1 col-span-2 text-slate-500 uppercase text-sm font-medium pb-6'>
+                      <img 
+                        className=' md:w-80 rounded-md border-4 border-double border-slate-700 group-hover:border-slate-200 transition-all duration-300 ease-in-out'
+                        src={`/images/${proyecto.imagen}.png`} 
+                        alt={proyecto.name} 
+                      />
+                    </header>
+
+                    <div className='lg:pl-3 col-span-6'>
+                      <h2 className='text-slate-200 font-bold text-lg mb-3'>{proyecto.title}</h2>
+                      
+                      <p className='text-sm mb-2'>
+                        {proyecto.content}
+                      </p>
+                      
+                      <ul className="flex flex-wrap gap-3 text-sm pt-1 lg:p-1 items-center">
+                        {proyecto.tecnologias.map((tecnologia, index )=> (
+                          <li
+                            key={index}
+                            className="p-1 bg-teal-400/10 text-teal-300 rounded-xl px-3 font-medium"
+                          >
+                            {tecnologia}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
+                </li>
               ))}
             </ul>
             
