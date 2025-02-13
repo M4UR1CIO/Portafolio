@@ -3,6 +3,7 @@ import styles from './styles/Gradient.module.css';
 import Header from './components/Header';
 import PrimerColumna from './components/PrimerColumna';
 import SegundaColumna from './components/SegundaColumna';
+import { proyectos } from './data/Proyectos';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
 
   return (
     <>
-      <header className="z-10 bg-slate-950 sticky top-0">
+      <header className="z-20 bg-slate-950 sticky top-0">
         <Header />
       </header>
 
@@ -38,7 +39,9 @@ function App() {
           
           <PrimerColumna />
 
-          <SegundaColumna />
+          <SegundaColumna 
+            proyectos={proyectos}
+          />
         </div>
       </section>
     </>

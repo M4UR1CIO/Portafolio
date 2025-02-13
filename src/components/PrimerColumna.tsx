@@ -26,18 +26,18 @@ export default function PrimerColumna() {
                     <ul className='space-y-2'>
                         <li className='max-w-[330px] space-y-1 p-2 border border-slate-900 hover:border-slate-800 hover:shadow-lg hover:shadow-slate-700 hover:transition-shadow duration-500 ease-in-out rounded-md'>
                             <span className='block text-base text-slate-400'>Número de Celular:</span>
-                            <span className='block font-semibold text-lg text-slate-200'>+51 970828781 </span>
+                            <span className='block text-lg font-extralight text-slate-200'>+51 970828781 </span>
                         </li>
                         <li className='max-w-[330px] space-y-1 p-2 text-lg border border-slate-900 hover:border-slate-800 hover:shadow-lg hover:shadow-slate-700 hover:transition-shadow duration-500 ease-in-out rounded-md'>
                             <span className='block text-base text-slate-400'>Correo Electronico:</span>
-                            <span className='block font-semibold text-lg text-slate-200'> mauriciopalomino39@gmail.com </span>
+                            <span className='block font-extralight text-slate-200'> mauriciopalomino39@gmail.com </span>
                         </li>
                         <li
                             className='group max-w-[330px] space-y-1 p-2 hover:cursor-pointer border border-slate-900 hover:border-slate-800 hover:shadow-lg hover:shadow-slate-700 hover:transition-shadow duration-500 ease-in-out rounded-md'
                             onClick={() => window.open("https://drive.google.com/file/d/19Wzb01K9xnQYVMmMtz1Wh4wBYwvMXNCB/view?usp=sharing", "_blank")}
                         >
                             <span
-                                className="text-lg font-semibold text-slate-300 group-hover:text-slate-100 group-hover:underline transition-all duration-1500 ease-in-out"
+                                className="text-lg font-extralight text-slate-300 group-hover:text-slate-100 group-hover:underline transition-all duration-1500 ease-in-out"
                             >
                                 Ver CV-MauricioPalomino
                             </span>
