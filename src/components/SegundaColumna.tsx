@@ -33,7 +33,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
               className='pl-5 lg:mt-12 pt-1 pr-6 lg:pl-0 lg:pr-1 space-y-5 '
             >
               <p>
-                Soy un desarrollador web apasionado por crear soluciones innovadoras y funcionales que combinan tecnologia y diseño. Con experiencia en herramientas moderas como <span className='font-semibold text-slate-300'>React, TypeScript y Python,</span> he trabajado en proyectos que van desde plataformas interactivas hasta bots inteligentes integrados con servicios como la <span className='font-semibold text-slate-300'>API Graph de Meta</span>.
+                Soy un desarrollador web apasionado por crear soluciones innovadoras y funcionales que combinan tecnologia y diseño. Con experiencia en herramientas moderas como <span className='font-semibold text-slate-300'>React, JavaScript, TypeScript, Python y Flask,</span> he trabajado en proyectos que van desde plataformas interactivas hasta bots inteligentes integrados con servicios como la <span className='font-semibold text-slate-300'>API Graph de Meta</span>.
               </p>
 
               <p>
