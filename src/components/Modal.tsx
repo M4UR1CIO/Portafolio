@@ -117,7 +117,7 @@ export default function Modal({isOpen, setIsOpen} : ModalProps) {
                 
                 <li className="group relative hover:bg-slate-600/35 border border-transparent hover:border-steal-800 rounded-lg hover:shadow-md hover:shadow-slate-700 transition-all duration-300 ease-in-out p- lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
     <div className='bg-teal-400/20 text-center p-1 rounded-xl mt-2 mx-2'>
-        <h2 className='uppercase text-teal-300'>Sección de Instagram</h2>
+        <h2 className='uppercase text-teal-300'>Sección de Chat Bot</h2>
     </div>
     <div className='grid grid-cols-2 md:grid-cols-8 gap-x-4 items-center p-3'>
         <div className="col-span-1 md:col-span-2 order-2 md:order-1">

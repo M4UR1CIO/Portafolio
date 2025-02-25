@@ -50,10 +50,10 @@ export const proyectos : Proyectos[] = [
     {
         id: '6',
         name: 'proyecto6',
-        title: 'Pagina Web Festival de Musica',
-        content: 'Pagina Web que muestra diferentes secciones, tiene un diseño minimalista',
-        imagen: 'Festival-Musica',
-        link: 'https://luminous-jelly-998350.netlify.app/',
-        tecnologias: ['JavaScript', 'SASS'],
+        title: 'Buscador de bedidas y recetas',
+        content: 'Sistema web que permite la busqueda de bebidas y recetas, asi como añadirlas a una sección de favoritos, se uso React Router DOM. Tiene un diseño agradable y facil de usar.',
+        imagen: 'Buscador-Recetas',
+        link: 'https://buscador-react-router-dom.vercel.app/',
+        tecnologias: ['TypeScript', 'React', 'React Router DOM', 'Tailwind']
     }
 ]
