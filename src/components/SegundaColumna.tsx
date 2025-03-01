@@ -132,7 +132,6 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
               ))}
             </ul>
             
-  
           </div>
           <Modal 
             isOpen={isOpen}
