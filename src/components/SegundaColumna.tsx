@@ -160,8 +160,8 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                 </li>
               ))}
             </ul>
-            <div className="mb-10">
-              <footer className="mt-10 text-center text-sm text-slate-500 px-10 lg:px-0">
+            <div className="lg:mb-10 mt-20">
+              <footer className="text-center text-sm text-slate-500 px-10 lg:px-0">
                 © 2025 Mauricio Palomino. Desarrollado con <span className="font-medium text-slate-400">React, TypeScript y Tailwind CSS</span>. Implementado en <span className="font-medium text-slate-400">Vercel</span>.
               </footer>
             </div>

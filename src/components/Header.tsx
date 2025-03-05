@@ -5,6 +5,20 @@ export default function Header() {
     const [menuOpen, SetMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState<string | null>(null);
 
+    useEffect(() => {
+        // Cuando el menu esta abierto, desactiva el scroll
+        if (menuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+
+        // Limpieza al desmontar el componente
+        return () => {
+            document.body.style.overflow = '';
+        };
+    } ,[menuOpen]);
+
     const handleSmoothScroll = (
         e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, 
         id: string, 
@@ -54,7 +68,7 @@ export default function Header() {
     
   return (
     <>
-        <div className='bg-slate-950/40 backdrop-blur-md z-50 relative'>
+        <div className='bg-slate-950/50 backdrop-blur-md z-50 relative'>
         <div className="px-2 pt-2 pb-1 lg:p-0 xl:max-w-[1200px] m-auto grid grid-cols-1 lg:grid-cols-2 ">
             <div></div>
     
@@ -65,7 +79,13 @@ export default function Header() {
                         className={`${ activeSection === "inicio" ? "text-slate-100 border-b-2 border-slate-200" : "text-slate-500"
                         } p-2 hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                         href='#inicio'
-                        onClick={(e) => handleSmoothScroll(e, 'inicio', window.innerWidth < 768 ? 100 : 150)}
+                        onClick={(e) => {
+                            if (menuOpen) {
+                                e.preventDefault();
+                            } else {
+                                handleSmoothScroll(e, 'inicio', window.innerWidth < 768 ? 100 : 150)
+                            }
+                        }}
                     >
                         Sobre Mí
                     </a>
@@ -73,7 +93,13 @@ export default function Header() {
                         className={`${ activeSection === "experiencia" ? "text-slate-100 border-b-2 border-slate-200" : "text-slate-500"
                           } p-2 hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                         href='#experiencia'
-                        onClick={(e) => handleSmoothScroll(e, 'experiencia', 100)}
+                        onClick={(e) => {
+                            if (menuOpen) {
+                                e.preventDefault();
+                            } else {
+                                handleSmoothScroll(e, 'experiencia', 100)
+                            }
+                        }}
                     >
                         Experiencia
                     </a>
@@ -81,7 +107,13 @@ export default function Header() {
                         className={`${ activeSection === "proyectos" ? "text-slate-100 border-b-2 border-slate-200" : "text-slate-500"
                         } p-2 hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                         href='#proyectos'
-                        onClick={(e) => handleSmoothScroll(e, 'proyectos', 100)}
+                        onClick={(e) => {
+                            if (menuOpen) {
+                                e.preventDefault();
+                            } else {
+                                handleSmoothScroll(e, 'proyectos', 100)
+                            }
+                        }}
                     >
                         Proyectos
                     </a>
@@ -131,51 +163,52 @@ export default function Header() {
             </div>
         </div>
         
-         {/* Fondo oscuro */}
-         {menuOpen && (
-                <div 
-                    className="fixed inset-0 bg-slate-950/20 backdrop-blur-md z-40 pointer-events-none" 
-                />
-            
-            )}               
+        {/* Fondo oscuro */}
+        {menuOpen && (
+            <div 
+                className="fixed inset-0 bg-slate-950/20 backdrop-blur-md z-30 transition-opacity duration-500" 
+                onClick={() => SetMenuOpen(false)}
+            />
+        
+        )}               
 
-            {/* Menú */}
-            <div
-                className={`md:hidden transition-all duration-300 ease-in-out ${
-                    menuOpen ? 'block' : 'hidden'
-                } bg-slate-950/40 backdrop-blur-md absolute left-0 right-0 py-3 duration-500 rounded-b-2xl z-50`}
-            >
-                <ul className="flex justify-around items-center">
-                    <li className="flex flex-col items-center gap-y-1">
-                        <FaLinkedin 
-                            className="text-slate-300 hover:text-emerald-200 hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out" 
-                            size={28} 
-                            onClick={() =>
-                                window.open('https://www.linkedin.com/in/mauricio-palomino-ayala-16a24a274/', '_blank')
-                            }
-                        />
-                        <span className="text-slate-200 text-sm">Linkedin</span>
-                    </li>
-                    <li className="flex flex-col items-center gap-y-1">
-                        <FaWhatsapp 
-                            className="text-slate-300 hover:text-emerald-200 hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out" 
-                            size={28} 
-                            onClick={() =>
-                                window.open('https://wa.me/970828781?text=Hola%20me%20interesa%20tu%20servicio', '_blank')
-                            }
-                        />
-                        <span className="text-slate-200 text-sm">WhatsApp</span>
-                    </li>
-                    <li className="flex flex-col items-center gap-y-1">
-                        <FaGithub 
-                            className="text-slate-300 hover:text-emerald-200 hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
-                            size={28} 
-                            onClick={() => window.open('https://github.com/M4UR1CIO', '_blank')}
-                        />
-                        <span className="text-slate-200 text-sm">GitHub</span>
-                    </li>
-                </ul>
-            </div>
+        {/* Menú */}
+        <div
+            className={`md:hidden ttransition-all duration-500 ease-in-out transform top-0 ${
+                menuOpen ? 'translate-y-14 opacity-100' : '-translate-y-10 opacity-0'
+            }  bg-slate-950/50 backdrop-blur-md absolute left-0 right-0 py-3 rounded-b-2xl z-30 `}
+        >
+            <ul className="flex justify-around items-center">
+                <li className="flex flex-col items-center gap-y-1">
+                    <FaLinkedin 
+                        className="text-slate-300 hover:text-emerald-200 hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out" 
+                        size={28} 
+                        onClick={() =>
+                            window.open('https://www.linkedin.com/in/mauricio-palomino-ayala-16a24a274/', '_blank')
+                        }
+                    />
+                    <span className="text-slate-200 text-sm">Linkedin</span>
+                </li>
+                <li className="flex flex-col items-center gap-y-1">
+                    <FaWhatsapp 
+                        className="text-slate-300 hover:text-emerald-200 hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out" 
+                        size={28} 
+                        onClick={() =>
+                            window.open('https://wa.me/970828781?text=Hola%20me%20interesa%20tu%20servicio', '_blank')
+                        }
+                    />
+                    <span className="text-slate-200 text-sm">WhatsApp</span>
+                </li>
+                <li className="flex flex-col items-center gap-y-1">
+                    <FaGithub 
+                        className="text-slate-300 hover:text-emerald-200 hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
+                        size={28} 
+                        onClick={() => window.open('https://github.com/M4UR1CIO', '_blank')}
+                    />
+                    <span className="text-slate-200 text-sm">GitHub</span>
+                </li>
+            </ul>
+        </div>
 
     </>
   )
