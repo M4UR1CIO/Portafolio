@@ -53,7 +53,7 @@ export default function PrimerColumna() {
                 </div>
             </div>
 
-            <div className='flex justify-center mt-16 md:mt-15 lg:mt-0 md:mb-16 lg:mb-0'>
+            <div className='flex justify-center mt-28 md:mt-15 lg:mt-0 md:mb-12 lg:mb-0'>
                 <ul className='flex gap-x-1 md:gap-x-4 justify-center p-3 border-t border-gray-600'>
                     <li
                         onClick={() => window.open('https://developer.mozilla.org/en-US/docs/Web/JavaScript', '_blank')}

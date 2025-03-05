@@ -26,6 +26,13 @@ function App() {
         className={`pt-5 md:pt-10 bg-slate-900 min-h-screen flex justify-center overflow-hidden relative`}
         onMouseMove={handleMouseMove}
       >
+        {/* Efecto de iluminación en la esquina superior izquierda */}
+        <div
+          className="lg:hidden pointer-events-none fixed inset-0 z-50 transition duration-300"
+          style={{
+            background: "radial-gradient(600px circle at 0px 0px, rgba(29, 78, 216, 0.15), transparent 80%)"
+          }}
+        ></div>
         <div className={`grid grid-cols-1 lg:grid-cols-2 gap-4 w-full max-w-[1200px]`}>
           
           
