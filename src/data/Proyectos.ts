@@ -4,7 +4,7 @@ export const proyectos : Proyectos[] = [
     { 
         id: '1', 
         name: 'proyecto1', 
-        title : 'Plataforma de Métricas con la API Gaph de Meta', 
+        title : 'Plataforma de Métricas de Meta', 
         content: 'Plataforma Web que muestra metricas de las redes sociales de Facebook e Instagram mediante graficos, usando la Api Graph de Meta. Los datos mostrados son en tiempo real y se pueden filtrar por fechas. Ademas de la descarga de un informe de ambas redes sociales.',
         imagen: 'Plataforma-Metricas',
         link: '',

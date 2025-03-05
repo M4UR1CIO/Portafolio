@@ -1,4 +1,6 @@
-import { FaReact } from 'react-icons/fa';
+import { FaReact, FaPhone } from 'react-icons/fa';
+import { MdEmail } from "react-icons/md"; 
+import { BsFileEarmarkPdf } from "react-icons/bs"; 
 import { DiJavascript1, DiCss3, DiHtml5 } from 'react-icons/di';
 import { SiTypescript, SiPython, SiFlask, SiTailwindcss, SiMysql } from 'react-icons/si';
 
@@ -10,43 +12,48 @@ export default function PrimerColumna() {
             className="pr-6 pl-3 bg-slate-900 rounded-lg lg:fixed top-24 lg:h-5/6 flex flex-col justify-between"
         >
             <div className='max-w-[600px]'>
-                <h1 className='text-5xl font-bold text-slate-300 hover:cursor-pointer hover:text-slate-200 pl-2'>
+                <h1 
+                    className='text-5xl font-black text-slate-100 hover:cursor-pointer pl-2'
+                >
                     Mauricio Palomino
                 </h1>
 
-                <h3 className='mt-2 mb-5 text-xl font-semibold text-slate-200 pl-2'>
+                <h3 className='mt-2 mb-5 text-xl font-medium text-slate-200 pl-2'>
                     Ingeniero de Software con Inteligencia Artificial
                 </h3>
 
-                <p className='max-w-[400px] text-slate-300 pl-2 text-base font-light'>
-                    Mi compromiso es colaborar de manera eficiente y ademas de tener una gran capacidad de Aprendizaje.
+                <p className='max-w-[400px] text-slate-400 pl-2 text-base font-light'>
+                    Apasionado por la tecnología, el aprendizaje continuo y la optimización de procesos.
                 </p>
 
-                <div className='mt-8'>
-                    <ul className='space-y-2'>
-                        <li className='max-w-[330px] space-y-1 p-2 border border-slate-900 hover:border-slate-800 hover:shadow-lg hover:shadow-slate-700 hover:transition-shadow duration-500 ease-in-out rounded-md'>
-                            <span className='block text-base text-slate-400'>Número de Celular:</span>
-                            <span className='block text-lg font-extralight text-slate-200'>+51 970828781 </span>
+                <div className='mt-20'>
+                    <ul className='space-y-3'>
+                        <li className='flex items-center gap-x-3 p-2'>
+                            <FaPhone size={19} className='text-slate-300'/>
+                            <span className='text-[17px] text-slate-200'>+51 970828781 </span>
                         </li>
-                        <li className='max-w-[330px] space-y-1 p-2 text-lg border border-slate-900 hover:border-slate-800 hover:shadow-lg hover:shadow-slate-700 hover:transition-shadow duration-500 ease-in-out rounded-md'>
-                            <span className='block text-base text-slate-400'>Correo Electronico:</span>
-                            <span className='block font-extralight text-slate-200'> mauriciopalomino39@gmail.com </span>
+                        <li className='flex items-center gap-x-3 max-w-[400px] p-2 '>
+
+                            <MdEmail size={23} className='text-slate-300'/>
+                            <span className='text-[17px] text-slate-200'> mauriciopalomino39@gmail.com </span>
                         </li>
                         <li
-                            className='group max-w-[330px] space-y-1 p-2 hover:cursor-pointer border border-slate-900 hover:border-slate-800 hover:shadow-lg hover:shadow-slate-700 hover:transition-shadow duration-500 ease-in-out rounded-md'
+                            className='flex items-center gap-x-3 group max-w-[330px] p-2 hover:cursor-pointer border border-slate-900 hover:border-slate-800 hover:shadow-lg hover:shadow-slate-700 hover:transition-shadow duration-500 ease-in-out rounded-md text-slate-300 hover:text-slate-100 ' 
                             onClick={() => window.open("https://drive.google.com/file/d/1ITXIYkclUI8WavJLfF96C2BcU_LzXG1v/view?usp=sharing", "_blank")}
                         >
+                            <BsFileEarmarkPdf size={23}/>
                             <span
-                                className="text-lg font-extralight text-slate-300 group-hover:text-slate-100 group-hover:underline transition-all duration-1500 ease-in-out"
+                                className="text-[17px] group-hover:underline transition-all duration-1500 ease-in-out"
                             >
                                 Ver CV-MauricioPalomino
                             </span>
+                            
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div className='flex justify-center mt-16 md:mt-15 lg:mt-0 mb-10'>
+            <div className='flex justify-center mt-16 md:mt-15 lg:mt-0 md:mb-16 lg:mb-0'>
                 <ul className='flex gap-x-1 md:gap-x-4 justify-center p-3 border-t border-gray-600'>
                     <li
                         onClick={() => window.open('https://developer.mozilla.org/en-US/docs/Web/JavaScript', '_blank')}

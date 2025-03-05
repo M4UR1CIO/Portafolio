@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Proyectos } from "../types"
 import Modal from "./Modal"
+import { GoArrowUpRight } from "react-icons/go";
 
 type SegundaColumnaProps = {
     proyectos: Proyectos[]
@@ -27,10 +28,10 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
   return (
     <>
         {/* Segunda columna (Scroll) */}
-        <div className="bg-slate-900 text-slate-400 mt-10 lg:mt-3 lg:pl-0 lg:pr-1 mb-10 lg:overflow-y-auto space-y-24 lg:space-y-40  ">
+        <div className="bg-slate-900 text-slate-400 mt-10 lg:mt-3 lg:pl-0 lg:pr-1 mb-10 lg:overflow-y-auto">
             <div
               id='inicio' 
-              className='pl-5 lg:mt-12 pt-1 pr-6 lg:pl-0 lg:pr-1 space-y-5 '
+              className='pl-5 lg:mt-12 pt-1 pr-6 lg:pl-0 lg:pr-1 space-y-5 mb-24 md:mb-32 lg:mb-40'
             >
               <p>
                 Soy un desarrollador web apasionado por crear soluciones innovadoras y funcionales que combinan tecnologia y diseño. Con experiencia en herramientas moderas como <span className='font-semibold text-slate-300'>React, JavaScript, TypeScript, Python y Flask,</span> he trabajado en proyectos que van desde plataformas interactivas hasta bots inteligentes integrados con servicios como la <span className='font-semibold text-slate-300'>API Graph de Meta</span>.
@@ -41,41 +42,61 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
               </p>
 
               <p>
-                Estoy comprometido con la creación de experiencias digitales que no solo sean funcionales, sino también significativas para los usuarios. Mi objetivo es contribuir a proyectos que marquen la diferencia, combinando mi pasión por la tecnología con un enfoque en la calidad y la innovación.
+                Estoy comprometido con la creación de experiencias digitales impactantes, que no solo cumplan su función, sino que también marquen la diferencia para los usuarios. Mi objetivo es seguir creciendo como profesional y contribuir con mi conocimiento y habilidades a proyectos que requieran calidad, rendimiento y escalabilidad.
               </p>
 
             </div>
 
-            <ul id='experiencia' className="space-y-8">
-              <div className='lg:grid grid-cols-8 p-3 hover:bg-slate-800/55 borderborder-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 md:mx-7  lg:mx-0 hover:scale-105 lg:hover:scale-100'>
-                <header className='lg:pt-1 col-span-2 text-slate-500 uppercase text-sm font-medium'>
+            <ul 
+              id='experiencia'
+              className="group/list space-y-8 mb-24 md:mb-32 lg:mb-40"
+            >
+              <div className='group relative lg:grid grid-cols-8 p-3 bg-slate-800/50 lg:bg-transparent hover:bg-slate-800/50 border border-slate-900 hover:border-slate-800 rounded-md hover:shadow-sm hover:shadow-slate-800 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 scale-105 lg:scale-100 lg:hover:!opacity-100 lg:group-hover/list:opacity-40'>
+                <header className='lg:pt-1 col-span-2 text-slate-300/60 uppercase text-sm font-medium'>
                     Agosto - Dic.
                     <span> 2024</span>
-                  
                 </header>
 
                 <div className='lg:pl-3 col-span-6'>
-                  <h2 className='text-slate-200 font-bold text-lg mb-3'>Prog. Full Stack - TGH Technology Solution</h2> 
-                    <p className='text-sm mb-2'> 
-                      Contribuí con el diseño y desarrollo de una plataforma web para la gestión de métricas y generación de informes de redes
-                      sociales, integrando los servicios de Meta mediante la Api Graph. Además de dashboards interactivos en React y TypeScript para visualizar métricas de Facebook e Instagram en tiempo real, y realicé pruebas de calidad de los endpoints utilizando Postman.
-                    </p>
+                    <h2 className='flex font-bold text-lg mb-3 items-center text-slate-200 group-hover:text-teal-200 gap-x-1'>Prog. Full Stack - TGH Technology Solution 
+                      <span>
+                        <GoArrowUpRight 
+                          className=" group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out" 
+                          strokeWidth={0.6}
+                      /></span>
+                    </h2> 
+                  
+                    <div className="space-y-2">
+                      <p className='text-sm'> 
+                        Diseñé y desarrollé una plataforma web para la gestión de métricas y generación de informes de redes sociales, integrando los servicios de Meta API Graph
+                      </p>
+                      <p className="text-sm">
+                        Implementé dashboards interactivos en React y TypeScript para visualizar métricas en tiempo real de Facebook e Instagram.
+                      </p>
+                      <p className='text-sm'>
+                        Tambien contribui en el backend de proyectos utilizando Express y TypeScript, asegurando la escalabilidad
+                        y rend/imiento.
+                      </p>
+                    </div>
                     
-                    <p className='text-sm'>
-                      Tambien contribui en el backend de proyectos utilizando Express y TypeScript, asegurando la escalabilidad
-                      y rendimiento.
-                    </p>
                 </div>
               </div>
               
-              <div className='lg:grid grid-cols-8 mb-12 p-3 hover:bg-slate-800/55 borderborder-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 hover:scale-105 lg:hover:scale-100 items-start'>
-                <header className='lg:pl-0 lg:pt-1 col-span-2 text-slate-500 uppercase text-sm font-medium'>
+              <div className='group relative lg:grid grid-cols-8 p-3 bg-slate-800/50 lg:bg-transparent hover:bg-slate-800/50 border border-slate-900 hover:border-slate-800 rounded-md hover:shadow-sm hover:shadow-slate-800 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 scale-105 lg:scale-100 lg:hover:!opacity-100 lg:group-hover/list:opacity-40'>
+                <header className='lg:pl-0 lg:pt-1 col-span-2 text-slate-300/60 uppercase text-sm font-medium'>
                   Feb. - Mayo
                   <span> 2024</span>
                   
                 </header>
                 <div className='lg:pl-3 col-span-6'>
-                  <h2 className='text-slate-200 font-bold text-lg mb-3'>Practicante Front End - Digital Buho S.A.C</h2>
+                    <h2 className='flex font-bold text-lg mb-3 items-center text-slate-200 group-hover:text-teal-200 gap-x-1'>Practicante Front End - Digital Buho S.A.C 
+                      <span>
+                        <GoArrowUpRight 
+                        className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out" 
+                        strokeWidth={0.6}
+                      /></span>
+                    </h2>
+                    
                   <p className='text-sm mb-2'>
                     Contribuí al diseño y desarrollo de prototipos interactivos en Figma para una aplicación móvil,
                     alineados con las necesidades de la empresa y las mejores prácticas de diseño UX/UI.
@@ -90,7 +111,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
 
             <ul 
                 id='proyectos' 
-                className="group/list space-y-4"
+                className="group/list space-y-8 lg:space-y-6 mb-12 md:mb-16 lg:mb-24"
             >
               {proyectos.map((proyecto) => (
                 <li 
@@ -99,21 +120,29 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                     ? () => setIsOpen(!isOpen) : 
                       () => window.open(proyecto.link, "_blank")}
                 >
-                  <div className="group relative lg:grid grid-cols-8 p-3 hover:bg-slate-800/50 border border-slate-900 hover:border-steal-800  rounded-md hover:shadow-md hover:shadow-slate-950 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 hover:scale-105 lg:hover:scale-100 items-start hover:cursor-pointer lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
+                  <div className="group relative lg:grid grid-cols-8 p-3 bg-slate-800/50 lg:bg-transparent hover:bg-slate-800/50 border border-slate-900 hover:border-slate-800  rounded-lg hover:shadow-sm hover:shadow-slate-800 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 scale-105 lg:scale-100 items-start hover:cursor-pointer lg:hover:!opacity-100 lg:group-hover/list:opacity-40">
 
                     <header className='lg:pt-1 col-span-2 text-slate-500 uppercase text-sm font-medium pb-6'>
                       <img 
-                        className=' md:w-80 rounded-md border-4 border-double border-slate-700 group-hover:border-slate-200 transition-all duration-300 ease-in-out'
+                        className='md:w-80 rounded-md border-4 border-double border-slate-700 group-hover:border-slate-200 transition-all duration-300 ease-in-out'
                         src={`/images/${proyecto.imagen}.png`} 
                         alt={proyecto.name} 
                       />
                     </header>
 
                     <div className='lg:pl-3 col-span-6'>
-                      <h2 className='text-slate-200 font-bold text-lg mb-3'>{proyecto.title}</h2>
-                      
+                    <h2 className='flex items-center mb-3 gap-x-1 text-slate-200 group-hover:text-teal-200 font-bold text-lg'>{proyecto.title} 
+                      <span>
+                        <GoArrowUpRight 
+                          className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out" 
+                          strokeWidth={0.6}
+                      />
+                      </span>
+                    </h2>
+
+
                       <p className='text-sm mb-2'>
-                        {proyecto.content}
+                          {proyecto.content}
                       </p>
                       
                       <ul className="flex flex-wrap gap-3 text-sm pt-1 lg:p-1 items-center">
@@ -131,7 +160,11 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                 </li>
               ))}
             </ul>
-            
+            <div className="mb-10">
+              <footer className="mt-10 text-center text-sm text-slate-500 px-10 lg:px-0">
+                © 2025 Mauricio Palomino. Desarrollado con <span className="font-medium text-slate-400">React, TypeScript y Tailwind CSS</span>. Implementado en <span className="font-medium text-slate-400">Vercel</span>.
+              </footer>
+            </div>
           </div>
           <Modal 
             isOpen={isOpen}

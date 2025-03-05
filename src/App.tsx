@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      <header className="z-20 bg-slate-950 sticky top-0">
+      <header className="z-50 bg-slate-950 sticky top-0">
         <Header />
       </header>
 
@@ -37,11 +37,12 @@ function App() {
 
           <div></div>
           
-          <PrimerColumna />
-
+          <PrimerColumna/>
+          
           <SegundaColumna 
             proyectos={proyectos}
           />
+          
         </div>
       </section>
     </>

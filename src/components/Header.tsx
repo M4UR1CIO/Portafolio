@@ -54,19 +54,19 @@ export default function Header() {
     
   return (
     <>
-        <div className="p-3 lg:p-0 xl:max-w-[1200px] m-auto grid grid-cols-1 lg:grid-cols-2 bg-slate-950">
+        <div className="p-3 lg:p-0 xl:max-w-[1200px] m-auto grid grid-cols-1 lg:grid-cols-2 bg-slate-950 z-50 relative">
             <div></div>
     
-            <div className=" flex justify-between items-center ">
+            <div className=" flex justify-between items-center">
                 {/* Menú de navegación principal */}
-                <ul className="p-1 flex gap-x-4 md:gap-x-10 text-base font-semibold uppercase">
+                <ul className="p-1 flex gap-x-2 md:gap-x-10 text-sm lg:text-base font-semibold uppercase">
                     <a 
                         className={`${ activeSection === "inicio" ? "text-slate-100 border-b-2 border-slate-200" : "text-slate-500"
                         } p-2 hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                         href='#inicio'
                         onClick={(e) => handleSmoothScroll(e, 'inicio', window.innerWidth < 768 ? 100 : 150)}
                     >
-                        Inicio
+                        Sobre Mí
                     </a>
                     <a 
                         className={`${ activeSection === "experiencia" ? "text-slate-100 border-b-2 border-slate-200" : "text-slate-500"
@@ -100,66 +100,81 @@ export default function Header() {
     
                 {/* Íconos visibles siempre en pantallas grandes */}
                 <ul className="hidden md:flex gap-x-1 md:gap-x-4">
-                <li
-                    className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
-                    onClick={() =>
-                    window.open(
-                        'https://www.linkedin.com/in/mauricio-palomino-ayala-16a24a274/',
-                        '_blank'
-                    )
-                    }
-                >
-                    <FaLinkedin className="text-slate-300 hover:text-emerald-200" size={28} />
-                </li>
-                <li
-                    className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
-                    onClick={() =>
-                    window.open('https://wa.me/970828781?', '_blank')
-                    }
-                >
-                    <FaWhatsapp className="text-slate-300 hover:text-emerald-200" size={28} />
-                </li>
-                <li
-                    className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
-                    onClick={() => window.open('https://github.com/M4UR1CIO', '_blank')}
-                >
-                    <FaGithub className="text-slate-300 hover:text-emerald-200" size={28} />
-                </li>
+                    <li
+                        className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
+                        onClick={() =>
+                        window.open(
+                            'https://www.linkedin.com/in/mauricio-palomino-ayala-16a24a274/',
+                            '_blank'
+                        )
+                        }
+                    >
+                        <FaLinkedin className="text-slate-300 hover:text-emerald-100" size={28} />
+                    </li>
+                    <li
+                        className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
+                        onClick={() =>
+                        window.open('https://wa.me/970828781?', '_blank')
+                        }
+                    >
+                        <FaWhatsapp className="text-slate-300 hover:text-emerald-100" size={28} />
+                    </li>
+                    <li
+                        className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
+                        onClick={() => window.open('https://github.com/M4UR1CIO', '_blank')}
+                    >
+                        <FaGithub className="text-slate-300 hover:text-emerald-100" size={28} />
+                    </li>
                 </ul>
             </div>
             </div>
     
-            <div
-            className={`md:hidden transition-all duration-300 ease-in-out ${
-                menuOpen ? 'block' : 'hidden'
-            } bg-slate-950 absolute left-0 right-0 py-3 duration-500 rounded-b-2xl`}
-            >
+            {/* Fondo oscuro */}
+            {menuOpen && (
+                <div 
+                    className="fixed inset-0 bg-slate-950/50 backdrop-blur-md z-40 pointer-events-none" 
+                />
             
-            <ul className="flex flex-col gap-y-4 items-center">
-                <li
-                className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
-                onClick={() =>
-                    window.open('https://www.linkedin.com/in/mauricio-palomino-ayala-16a24a274/', '_blank')
-                }
-                >
-                <FaLinkedin className="text-slate-300 hover:text-emerald-200" size={28} />
-                </li>
-                <li
-                className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
-                onClick={() =>
-                    window.open('https://wa.me/970828781?text=Hola%20me%20interesa%20tu%20servicio', '_blank')
-                }
-                >
-                <FaWhatsapp className="text-slate-300 hover:text-emerald-200" size={28} />
-                </li>
-                <li
-                className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
-                onClick={() => window.open('https://github.com/M4UR1CIO', '_blank')}
-                >
-                <FaGithub className="text-slate-300 hover:text-emerald-200" size={28} />
-                </li>
-            </ul>
-        </div>
+            )}
+
+            {/* Menú */}
+            <div
+                className={`md:hidden transition-all duration-300 ease-in-out ${
+                    menuOpen ? 'block' : 'hidden'
+                } bg-gradient-to-b from-slate-950 to-slate-900 absolute left-0 right-0 py-3 duration-500 rounded-b-2xl z-50`}
+            >
+                <ul className="flex justify-around items-center">
+                    <li className="flex flex-col items-center gap-y-1">
+                        <FaLinkedin 
+                            className="text-slate-300 hover:text-emerald-200 hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out" 
+                            size={28} 
+                            onClick={() =>
+                                window.open('https://www.linkedin.com/in/mauricio-palomino-ayala-16a24a274/', '_blank')
+                            }
+                        />
+                        <span className="text-slate-200 text-sm">Linkedin</span>
+                    </li>
+                    <li className="flex flex-col items-center gap-y-1">
+                        <FaWhatsapp 
+                            className="text-slate-300 hover:text-emerald-200 hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out" 
+                            size={28} 
+                            onClick={() =>
+                                window.open('https://wa.me/970828781?text=Hola%20me%20interesa%20tu%20servicio', '_blank')
+                            }
+                        />
+                        <span className="text-slate-200 text-sm">WhatsApp</span>
+                    </li>
+                    <li className="flex flex-col items-center gap-y-1">
+                        <FaGithub 
+                            className="text-slate-300 hover:text-emerald-200 hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
+                            size={28} 
+                            onClick={() => window.open('https://github.com/M4UR1CIO', '_blank')}
+                        />
+                        <span className="text-slate-200 text-sm">GitHub</span>
+                    </li>
+                </ul>
+            </div>
+
     </>
   )
 }
