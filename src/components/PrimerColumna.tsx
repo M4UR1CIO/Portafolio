@@ -9,7 +9,7 @@ export default function PrimerColumna() {
     <>
         {/* Primera columna (Fija) */}
         <div 
-            className="pr-6 pl-3 bg-slate-900 rounded-lg lg:fixed top-24 lg:h-5/6 flex flex-col justify-between"
+            className="pr-3 pl-3 bg-slate-900 rounded-lg lg:fixed top-24 lg:h-5/6 flex flex-col justify-between"
         >
             <div className='max-w-[600px]'>
                 <h1 
@@ -18,7 +18,7 @@ export default function PrimerColumna() {
                     Mauricio Palomino
                 </h1>
 
-                <h3 className='mt-2 mb-5 text-xl font-medium text-slate-200 pl-2'>
+                <h3 className='mt-4 md:mt-2 mb-5 text-xl font-medium text-slate-200 pl-2'>
                     Ingeniero de Software con Inteligencia Artificial
                 </h3>
 
@@ -26,7 +26,7 @@ export default function PrimerColumna() {
                     Apasionado por la tecnología, el aprendizaje continuo y la optimización de procesos.
                 </p>
 
-                <div className='mt-20'>
+                <div className='mt-24 md:mt-20'>
                     <ul className='space-y-3'>
                         <li className='flex items-center gap-x-3 p-2'>
                             <FaPhone size={19} className='text-slate-300'/>
@@ -53,8 +53,8 @@ export default function PrimerColumna() {
                 </div>
             </div>
 
-            <div className='flex justify-center mt-28 md:mt-15 lg:mt-0 md:mb-12 lg:mb-0'>
-                <ul className='flex gap-x-1 md:gap-x-4 justify-center p-3 border-t border-gray-600'>
+            <div className='flex justify-center mt-24 md:mt-15 lg:mt-0 md:mb-12 lg:mb-0'>
+                <ul className='flex gap-x-[7px] md:gap-x-4 justify-center p-3 border-t border-gray-600'>
                     <li
                         onClick={() => window.open('https://developer.mozilla.org/en-US/docs/Web/JavaScript', '_blank')}
                         className='hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out'

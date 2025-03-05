@@ -30,7 +30,7 @@ function App() {
         <div
           className="lg:hidden pointer-events-none fixed inset-0 z-50 transition duration-300"
           style={{
-            background: "radial-gradient(600px circle at 0px 0px, rgba(29, 78, 216, 0.15), transparent 80%)"
+            background: "radial-gradient(700px circle at 0px 0px, rgba(29, 78, 216, 0.15), transparent 80%)"
           }}
         ></div>
         <div className={`grid grid-cols-1 lg:grid-cols-2 gap-4 w-full max-w-[1200px]`}>

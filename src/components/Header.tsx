@@ -74,7 +74,7 @@ export default function Header() {
     
             <div className=" flex justify-between items-center">
                 {/* Menú de navegación principal */}
-                <ul className="py-1 pr-1 pl-0 lg:p-1 flex gap-x-3 md:gap-x-5 lg:gap-x-10 text-sm lg:text-base font-semibold uppercase">
+                <ul className="p-1 flex gap-x-3 md:gap-x-5 lg:gap-x-10 text-sm lg:text-base font-semibold uppercase">
                     <a 
                         className={`${ activeSection === "inicio" ? "text-slate-100 border-b-2 border-slate-200 scale-105" : "text-slate-500"
                         } p-2 hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
