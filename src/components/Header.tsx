@@ -74,9 +74,9 @@ export default function Header() {
     
             <div className=" flex justify-between items-center">
                 {/* Menú de navegación principal */}
-                <ul className="p-1 flex gap-x-2 md:gap-x-10 text-sm lg:text-base font-semibold uppercase">
+                <ul className="py-1 pr-1 pl-0 lg:p-1 flex gap-x-3 md:gap-x-5 lg:gap-x-10 text-sm lg:text-base font-semibold uppercase">
                     <a 
-                        className={`${ activeSection === "inicio" ? "text-slate-100 border-b-2 border-slate-200" : "text-slate-500"
+                        className={`${ activeSection === "inicio" ? "text-slate-100 border-b-2 border-slate-200 scale-105" : "text-slate-500"
                         } p-2 hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                         href='#inicio'
                         onClick={(e) => {
@@ -90,7 +90,7 @@ export default function Header() {
                         Sobre Mí
                     </a>
                     <a 
-                        className={`${ activeSection === "experiencia" ? "text-slate-100 border-b-2 border-slate-200" : "text-slate-500"
+                        className={`${ activeSection === "experiencia" ? "text-slate-100 border-b-2 border-slate-200 scale-105" : "text-slate-500"
                           } p-2 hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                         href='#experiencia'
                         onClick={(e) => {
@@ -104,7 +104,7 @@ export default function Header() {
                         Experiencia
                     </a>
                     <a 
-                        className={`${ activeSection === "proyectos" ? "text-slate-100 border-b-2 border-slate-200" : "text-slate-500"
+                        className={`${ activeSection === "proyectos" ? "text-slate-100 border-b-2 border-slate-200 scale-105" : "text-slate-500"
                         } p-2 hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                         href='#proyectos'
                         onClick={(e) => {
@@ -120,14 +120,14 @@ export default function Header() {
                 </ul>
                         
                 {/* Ícono de despliegue para dispositivos móviles */}
-                <div className="md:hidden flex items-center pr-4">
+                <div className="md:hidden flex items-center pr-1">
                 <button
                     onClick={() => SetMenuOpen(!menuOpen)}
                     className={`transition-transform duration-300 hover:scale-110 ease-in-out ${
                     menuOpen ? 'text-emerald-200' : 'text-slate-300'
                     }`}
                 >
-                    <FaBars size={25}/> 
+                    <FaBars size={26}/> 
                 </button>
                 </div>
     

@@ -140,7 +140,6 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                       </span>
                     </h2>
 
-
                       <p className='text-sm mb-2'>
                           {proyecto.content}
                       </p>
