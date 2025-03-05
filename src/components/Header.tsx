@@ -54,7 +54,8 @@ export default function Header() {
     
   return (
     <>
-        <div className="p-3 lg:p-0 xl:max-w-[1200px] m-auto grid grid-cols-1 lg:grid-cols-2 bg-slate-950 z-50 relative">
+        <div className='bg-slate-950/40 backdrop-blur-md z-50 relative'>
+        <div className="px-2 pt-2 pb-1 lg:p-0 xl:max-w-[1200px] m-auto grid grid-cols-1 lg:grid-cols-2 ">
             <div></div>
     
             <div className=" flex justify-between items-center">
@@ -85,9 +86,9 @@ export default function Header() {
                         Proyectos
                     </a>
                 </ul>
-    
+                        
                 {/* Ícono de despliegue para dispositivos móviles */}
-                <div className="md:hidden flex items-center">
+                <div className="md:hidden flex items-center pr-4">
                 <button
                     onClick={() => SetMenuOpen(!menuOpen)}
                     className={`transition-transform duration-300 hover:scale-110 ease-in-out ${
@@ -128,20 +129,21 @@ export default function Header() {
                 </ul>
             </div>
             </div>
-    
-            {/* Fondo oscuro */}
-            {menuOpen && (
+        </div>
+        
+         {/* Fondo oscuro */}
+         {menuOpen && (
                 <div 
-                    className="fixed inset-0 bg-slate-950/50 backdrop-blur-md z-40 pointer-events-none" 
+                    className="fixed inset-0 bg-slate-950/20 backdrop-blur-md z-40 pointer-events-none" 
                 />
             
-            )}
+            )}               
 
             {/* Menú */}
             <div
                 className={`md:hidden transition-all duration-300 ease-in-out ${
                     menuOpen ? 'block' : 'hidden'
-                } bg-gradient-to-b from-slate-950 to-slate-900 absolute left-0 right-0 py-3 duration-500 rounded-b-2xl z-50`}
+                } bg-slate-950/40 backdrop-blur-md absolute left-0 right-0 py-3 duration-500 rounded-b-2xl z-50`}
             >
                 <ul className="flex justify-around items-center">
                     <li className="flex flex-col items-center gap-y-1">

@@ -18,7 +18,7 @@ function App() {
 
   return (
     <>
-      <header className="z-50 bg-slate-950 sticky top-0">
+      <header className="z-50 sticky top-0">
         <Header />
       </header>
 
