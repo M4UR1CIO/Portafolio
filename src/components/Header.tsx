@@ -68,8 +68,8 @@ export default function Header() {
     
   return (
     <>
-        <div className='bg-slate-950/50 backdrop-blur-md z-50 relative'>
-        <div className="px-2 pt-2 pb-1 lg:p-0 xl:max-w-[1200px] m-auto grid grid-cols-1 lg:grid-cols-2 ">
+        <div className='bg-slate-950/50 lg:bg-slate-950/40 backdrop-blur-md z-50 relative'>
+        <div className="px-2 pt-2 pb-1 lg:p-0 xl:max-w-[1200px] m-auto grid grid-cols-1 lg:grid-cols-2">
             <div></div>
     
             <div className=" flex justify-between items-center">

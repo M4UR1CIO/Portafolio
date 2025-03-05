@@ -31,7 +31,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
         <div className="bg-slate-900 text-slate-400 mt-10 lg:mt-3 lg:pl-0 lg:pr-1 mb-10 lg:overflow-y-auto">
             <div
               id='inicio' 
-              className='pl-5 lg:mt-12 pt-1 pr-6 lg:pl-0 lg:pr-1 space-y-5 mb-24 md:mb-32 lg:mb-40'
+              className='pl-5 lg:mt-12 pt-1 pr-6 lg:pl-0 lg:pr-0 space-y-5 mb-24 md:mb-32 lg:mb-40 text-justify'
             >
               <p>
                 Soy un desarrollador web apasionado por crear soluciones innovadoras y funcionales que combinan tecnologia y diseño. Con experiencia en herramientas moderas como <span className='font-semibold text-slate-300'>React, JavaScript, TypeScript, Python y Flask,</span> he trabajado en proyectos que van desde plataformas interactivas hasta bots inteligentes integrados con servicios como la <span className='font-semibold text-slate-300'>API Graph de Meta</span>.
@@ -49,7 +49,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
 
             <ul 
               id='experiencia'
-              className="group/list space-y-8 mb-24 md:mb-32 lg:mb-40"
+              className="group/list space-y-10 mb-24 md:mb-32 lg:mb-40"
             >
               <div className='group relative lg:grid grid-cols-8 p-3 bg-slate-800/50 lg:bg-transparent hover:bg-slate-800/50 border border-slate-900 hover:border-slate-800 rounded-md hover:shadow-sm hover:shadow-slate-800 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 scale-105 lg:scale-100 lg:hover:!opacity-100 lg:group-hover/list:opacity-40'>
                 <header className='lg:pt-1 col-span-2 text-slate-300/60 uppercase text-sm font-medium'>
@@ -66,7 +66,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                       /></span>
                     </h2> 
                   
-                    <div className="space-y-2">
+                    <div className="space-y-2 text-justify">
                       <p className='text-sm'> 
                         Diseñé y desarrollé una plataforma web para la gestión de métricas y generación de informes de redes sociales, integrando los servicios de Meta API Graph
                       </p>
@@ -89,29 +89,32 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                   
                 </header>
                 <div className='lg:pl-3 col-span-6'>
-                    <h2 className='flex font-bold text-lg mb-3 items-center text-slate-200 group-hover:text-teal-200 gap-x-1'>Practicante Front End - Digital Buho S.A.C 
-                      <span>
-                        <GoArrowUpRight 
-                        className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out" 
-                        strokeWidth={0.6}
-                      /></span>
-                    </h2>
-                    
-                  <p className='text-sm mb-2'>
-                    Contribuí al diseño y desarrollo de prototipos interactivos en Figma para una aplicación móvil,
-                    alineados con las necesidades de la empresa y las mejores prácticas de diseño UX/UI.
-                  </p>
-                  <p className='text-sm'>
-                    Brindé soporte en la creación y mejora del diseño web de aplicaciones empresariales,
-                    optimizando la experiencia de usuario y la coherencia visual.
-                  </p>
+                  <h2 className='flex font-bold text-lg mb-3 items-center text-slate-200 group-hover:text-teal-200 gap-x-1'>Practicante Front End - Digital Buho S.A.C 
+                    <span>
+                      <GoArrowUpRight 
+                      className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out" 
+                      strokeWidth={0.6}
+                    /></span>
+                  </h2>
+                  
+                  <div className="text-justify">
+                    <p className='text-sm mb-2'>
+                      Contribuí al diseño y desarrollo de prototipos interactivos en Figma para una aplicación móvil,
+                      alineados con las necesidades de la empresa y las mejores prácticas de diseño UX/UI.
+                    </p>
+                    <p className='text-sm'>
+                      Brindé soporte en la creación y mejora del diseño web de aplicaciones empresariales,
+                      optimizando la experiencia de usuario y la coherencia visual.
+                    </p>
+                  </div>
+                  
                 </div>
               </div>
             </ul>
 
             <ul 
                 id='proyectos' 
-                className="group/list space-y-8 lg:space-y-6 mb-12 md:mb-16 lg:mb-24"
+                className="group/list space-y-10 lg:space-y-6 mb-12 md:mb-16 lg:mb-24"
             >
               {proyectos.map((proyecto) => (
                 <li 
@@ -140,11 +143,11 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                       </span>
                     </h2>
 
-                      <p className='text-sm mb-2'>
+                      <p className='text-sm mb-2 text-justify'>
                           {proyecto.content}
                       </p>
                       
-                      <ul className="flex flex-wrap gap-3 text-sm pt-1 lg:p-1 items-center">
+                      <ul className="flex flex-wrap gap-3 text-sm pt-1 lg:py-1 items-center">
                         {proyecto.tecnologias.map((tecnologia, index )=> (
                           <li
                             key={index}
