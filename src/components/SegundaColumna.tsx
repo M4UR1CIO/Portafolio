@@ -31,30 +31,35 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
         <div className="bg-slate-900 text-slate-400 mt-20 lg:mt-3 lg:pl-0 lg:pr-1 mb-10 lg:overflow-y-auto">
             <div
               id='inicio' 
-              className='pl-5 lg:mt-12 pt-1 pr-6 lg:pl-0 lg:pr-0 space-y-5 mb-24 md:mb-32 lg:mb-40'
+              className='pl-5 lg:mt-12 pt-1 pr-6 lg:pl-0 lg:pr-0 mb-24 md:mb-32 lg:mb-40 space-y-12'
             >
+              <div className="space-y-5">
+                <p>
+                Soy un desarrollador web apasionado por crear soluciones innovadoras y funcionales que combinan tecnología y diseño. Con experiencia en <span className='font-semibold text-slate-300'>React, JavaScript, TypeScript, Python y Flask</span>, he desarrollado plataformas interactivas y bots inteligentes integrados con la <span className='font-semibold text-slate-300'>API Graph de Meta</span>.
+              </p>
+
               <p>
-                Soy un desarrollador web apasionado por crear soluciones innovadoras y funcionales que combinan tecnologia y diseño. Con experiencia en herramientas moderas como <span className='font-semibold text-slate-300'>React, JavaScript, TypeScript, Python y Flask,</span> he trabajado en proyectos que van desde plataformas interactivas hasta bots inteligentes integrados con servicios como la <span className='font-semibold text-slate-300'>API Graph de Meta</span>.
+                Me especializo en el desarrollo <span className='font-semibold text-slate-300'>frontend y backend</span>, enfocándome en la optimización de interfaces, la visualización de datos en tiempo real y la integración de sistemas seguros y escalables. Además, cuento con experiencia en el <span className='font-semibold text-slate-300'>consumo y desarrollo de APIs REST</span>, permitiendo la conexión eficiente entre diversas aplicaciones y servicios.
               </p>
-
-              <p className="">
-                Me especializo en el desarrollo frontend y backend, enfocándome en la optimización de interfaces, la visualización de datos en tiempo real y la integración de sistemas seguros y escalables. Además, disfruto explorar nuevas tecnologías y aprender continuamente para seguir creando productos de alto impacto.
-              </p>
-              <h2 className="text-lg font-bold text-slate-200 uppercase">Tecnologías y Herramientas:</h2>
-              <section className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 p-2 group/list">
-                
-                {tecnologias.map((tech, index) => (
-                  <div
-                    key={index}
-                    className="group relative flex flex-col items-center justify-center bg-slate-900 py-4 rounded-lg shadow-sm hover:shadow-slate-500 hover:scale-105 transition-all duration-300 text-2xl lg:hover:!opacity-100 lg:group-hover/list:opacity-40 cursor-pointer"
-                    onClick={() => window.open(tech.link, '_blank')}
-                  >
-                    {tech.icono}
-                    <p className="text-sm text-white mt-2">{tech.nombre}</p>
-                  </div>
-                ))}
-              </section>
-
+              </div>
+              
+              <div>
+                <h2 className="text-lg font-bold text-slate-200 uppercase">Tecnologías y Herramientas:</h2>
+                <section className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 p-2 group/list">
+                  
+                  {tecnologias.map((tech, index) => (
+                    <div
+                      key={index}
+                      className="group relative flex flex-col items-center justify-center bg-slate-900 py-4 rounded-lg shadow-sm hover:shadow-slate-500 hover:scale-105 transition-all duration-300 text-2xl lg:hover:!opacity-100 lg:group-hover/list:opacity-40 cursor-pointer"
+                      onClick={() => window.open(tech.link, '_blank')}
+                    >
+                      {tech.icono}
+                      <p className="text-sm text-white mt-2">{tech.nombre}</p>
+                    </div>
+                  ))}
+                </section>
+              </div>
+              
             </div>
 
             <ul 
@@ -143,7 +148,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                     </div>
 
                     {/* Contenedor del botón alineado abajo */}
-                    <div className="flex flex-row md:flex-col lg:flex-col h-full justify-end items-center space-x-2 md:space-x-0 space-y-1 mt-2 md:mt-0">
+                    <div className="flex flex-row md:flex-col lg:flex-col h-full justify-center md:justify-end items-center space-x-2 md:space-x-0 space-y-2 mt-2 md:mt-0">
                       {proyecto.id !== '1' && (
                         <button 
                           className="flex justify-between w-[160px] bg-slate-500 px-4 py-2 rounded-xl items-center gap-2 text-white transition-all duration-300 ease-in-out hover:scale-105 border border-slate-900 hover:border-slate-500 hover:bg-slate-200 hover:text-teal-900"
