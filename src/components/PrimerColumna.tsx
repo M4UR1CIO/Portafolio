@@ -1,8 +1,8 @@
-import { FaReact, FaPhone } from 'react-icons/fa';
+import { FaPhone } from 'react-icons/fa';
 import { MdEmail } from "react-icons/md"; 
 import { BsFileEarmarkPdf } from "react-icons/bs"; 
-import { DiJavascript1, DiCss3, DiHtml5 } from 'react-icons/di';
-import { SiTypescript, SiPython, SiFlask, SiTailwindcss, SiMysql } from 'react-icons/si';
+import { Typewriter } from 'react-simple-typewriter';
+import { motion } from 'framer-motion';
 
 export default function PrimerColumna() {
   return (
@@ -15,18 +15,43 @@ export default function PrimerColumna() {
                 <h1 
                     className='text-5xl font-black text-slate-100 hover:cursor-pointer pl-2'
                 >
-                    Mauricio Palomino
+                    <span>
+                    <Typewriter
+                    words={['Mauricio Palomino']}
+                    loop={1} // 0 significa infinito
+                    cursor
+                    cursorStyle="|"
+                    typeSpeed={100}
+                    deleteSpeed={100}
+                    delaySpeed={1000}
+                  />
+                    </span>
+                    
                 </h1>
 
-                <h3 className='mt-4 md:mt-2 mb-5 text-xl font-medium text-slate-200 pl-2'>
+                <motion.h3
+                    initial={{ opacity: 0, x: -50 }} // Inicia invisible y desplazado a la izquierda
+                    animate={{ opacity: 1, x: 0 }} // Se hace visible y se mueve a su posición
+                    transition={{ duration: 1, ease: 'easeOut' }} // Duración y tipo de animación
+                    className="mt-4 md:mt-2 mb-5 text-xl font-medium text-slate-200 pl-2"
+                    >
                     Ingeniero de Software con Inteligencia Artificial
-                </h3>
+                </motion.h3>
+                
+                <motion.p
+                    initial={{ opacity: 0, x: -50 }} // Inicia invisible y desplazado a la izquierda
+                    animate={{ opacity: 1, x: 0 }} // Se hace visible y se mueve a su posición
+                    transition={{ duration: 1, ease: 'easeOut' }} // Duración y tipo de animación
+                    className='max-w-[400px] text-slate-400 pl-2 text-base font-light'
+                >
+                    Apasionado por la tecnología, el aprendizaje continuo y la optimización de procesos.
+                </motion.p>
 
                 <p className='max-w-[400px] text-slate-400 pl-2 text-base font-light'>
-                    Apasionado por la tecnología, el aprendizaje continuo y la optimización de procesos.
+                    
                 </p>
 
-                <div className='mt-24 md:mt-20'>
+                <div className='mt-12 md:mt-20'>
                     <ul className='space-y-3'>
                         <li className='flex items-center gap-x-3 p-2'>
                             <FaPhone size={19} className='text-slate-300'/>
@@ -51,65 +76,6 @@ export default function PrimerColumna() {
                         </li>
                     </ul>
                 </div>
-            </div>
-
-            <div className='flex justify-center mt-24 md:mt-15 lg:mt-0 md:mb-12 lg:mb-0'>
-                <ul className='flex gap-x-[7px] md:gap-x-4 justify-center p-3 border-t border-gray-600'>
-                    <li
-                        onClick={() => window.open('https://developer.mozilla.org/en-US/docs/Web/JavaScript', '_blank')}
-                        className='hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out'
-                    >
-                        <DiJavascript1 size={35} className="text-yellow-500 hover:text-yellow-300" />
-                    </li>
-                    <li
-                        onClick={() => window.open('https://www.typescriptlang.org/docs/', '_blank')}
-                        className='hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out'
-                    >
-                        <SiTypescript size={30} className="text-blue-500 hover:text-blue-300" />
-                    </li>
-                    <li
-                        onClick={() => window.open('https://docs.python.org/3/', '_blank')}
-                        className='hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out'
-                    >
-                        <SiPython size={30} className="text-green-500 hover:text-green-300" />
-                    </li>
-                    <li
-                        onClick={() => window.open('https://flask.palletsprojects.com/', '_blank')}
-                        className='hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out'
-                    >
-                        <SiFlask size={33} className="text-gray-700 hover:text-gray-400" />
-                    </li>
-                    <li
-                        onClick={() => window.open('https://reactjs.org/docs/getting-started.html', '_blank')}
-                        className='hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out'
-                    >
-                        <FaReact size={35} className="text-blue-400 hover:text-blue-200" />
-                    </li>
-                    <li
-                        onClick={() => window.open('https://tailwindcss.com/docs', '_blank')}
-                        className='hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out'
-                    >
-                        <SiTailwindcss size={35} className="text-teal-400 hover:text-teal-200" />
-                    </li>
-                    <li
-                        onClick={() => window.open('https://developer.mozilla.org/en-US/docs/Web/CSS', '_blank')}
-                        className='hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out'
-                    >
-                        <DiCss3 size={35} className="text-blue-600 hover:text-blue-300" />
-                    </li>
-                    <li
-                        onClick={() => window.open('https://developer.mozilla.org/en-US/docs/Web/HTML', '_blank')}
-                        className='hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out'
-                    >
-                        <DiHtml5 size={35} className="text-orange-500 hover:text-orange-300" />
-                    </li>
-                    <li
-                        onClick={() => window.open('https://dev.mysql.com/doc/', '_blank')}
-                        className='hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out'
-                    >
-                        <SiMysql size={35} className="text-blue-700 hover:text-blue-300" />
-                    </li>
-                </ul>
             </div>
         </div>
     </>

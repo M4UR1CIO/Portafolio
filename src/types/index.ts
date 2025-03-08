@@ -5,5 +5,6 @@ export type Proyectos = {
     content: string
     imagen: string
     link: string
+    link_github: string
     tecnologias: string[]
 }
