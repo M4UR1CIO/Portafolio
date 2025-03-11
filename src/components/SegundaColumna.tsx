@@ -31,7 +31,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
         <div className="bg-slate-900 text-slate-400 mt-20 lg:mt-3 lg:pl-0 lg:pr-1 mb-10 lg:overflow-y-auto">
             <div
               id='inicio' 
-              className='pl-5 lg:mt-12 pt-1 pr-6 lg:pl-0 lg:pr-0 mb-24 md:mb-32 lg:mb-40 space-y-12'
+              className='pl-5 lg:mt-12 pt-1 pr-5 lg:pl-0 lg:pr-0 mb-24 md:mb-32 lg:mb-40 space-y-12'
             >
               <div className="space-y-5">
                 <p>
@@ -61,70 +61,72 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
               </div>
               
             </div>
-
-            <ul 
-              id='experiencia'
-              className="group/list space-y-10 mb-24 md:mb-32 lg:mb-40"
-            >
-              <div className='group relative lg:grid grid-cols-8 p-3 bg-slate-800/50 lg:bg-transparent hover:bg-slate-800/50 border border-slate-900 hover:border-slate-800 rounded-md hover:shadow-sm hover:shadow-slate-800 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 scale-105 lg:scale-100 lg:hover:!opacity-100 lg:group-hover/list:opacity-40'>
-                <header className='lg:pt-1 col-span-2 text-slate-300/60 uppercase text-sm font-medium'>
-                    Agosto - Dic.
-                    <span> 2024</span>
-                </header>
-
-                <div className='lg:pl-3 col-span-6'>
-                    <h2 className='flex font-bold text-lg mb-3 items-center text-slate-200 group-hover:text-teal-200 gap-x-1'>Prog. Full Stack - TGH Technology Solution 
-                      <span>
-                        <GoArrowUpRight 
-                          className=" group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out" 
-                          strokeWidth={0.6}
-                      /></span>
-                    </h2> 
-                  
-                    <div className="space-y-2 ">
-                      <p className='text-sm'> 
-                        Diseñé y desarrollé una plataforma web para la gestión de métricas y generación de informes de redes sociales, integrando los servicios de Meta API Graph
-                      </p>
-                      <p className="text-sm">
-                        Implementé dashboards interactivos en React y TypeScript para visualizar métricas en tiempo real de Facebook e Instagram.
-                      </p>
-                      <p className='text-sm'>
-                        Tambien contribui en el backend de proyectos utilizando Express y TypeScript, asegurando la escalabilidad
-                        y rend/imiento.
-                      </p>
-                    </div>
-                    
-                </div>
-              </div>
               
-              <div className='group relative lg:grid grid-cols-8 p-3 bg-slate-800/50 lg:bg-transparent hover:bg-slate-800/50 border border-slate-900 hover:border-slate-800 rounded-md hover:shadow-sm hover:shadow-slate-800 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 scale-105 lg:scale-100 lg:hover:!opacity-100 lg:group-hover/list:opacity-40'>
-                <header className='lg:pl-0 lg:pt-1 col-span-2 text-slate-300/60 uppercase text-sm font-medium'>
-                  Feb. - Mayo
-                  <span> 2024</span>
-                  
-                </header>
-                <div className='lg:pl-3 col-span-6'>
-                  <h2 className='flex font-bold text-lg mb-3 items-center text-slate-200 group-hover:text-teal-200 gap-x-1'>Practicante Front End - Digital Buho S.A.C 
+            <ul 
+              id="experiencia"
+              className="ml-5 pr-4 relative border-s border-gray-200 dark:border-gray-700 lg:ml-3 group/list space-y-5 mb-24 md:mb-32 lg:mb-40"
+            >
+              <li className="group mb-5 ms-3 lg:ms-6 p-3 bg-slate-900 border border-slate-900 rounded-lg transition-all duration-300 ease-in-out lg:hover:bg-slate-800/50 lg:hover:border-slate-800 lg:hover:shadow-sm lg:hover:shadow-slate-800 lg:hover:!opacity-100 lg:group-hover/list:opacity-40"> 
+           
+                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                  <svg className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                  </svg>
+                </span>
+                  <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-slate-200 hover:text-teal-200 gap-x-1">
+                    Prog. Full Stack - TGH Technology Solution   
                     <span>
                       <GoArrowUpRight 
+                        className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out" 
+                        strokeWidth={0.6}
+                    />
+                    </span>
+                  </h3>
+                  <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                    Agosto 2024 - Diciembre 2024
+                  </time>
+                  <div className="text-sm font-normal text-slate-400 dark:text-slate-400">
+                    <ul className="list-disc list-inside">
+                      <li>Diseñé y desarrollé una plataforma web para la gestión de métricas y generación de informes de redes sociales, integrando la Api Graph de Meta.</li>
+                      <li>Implementé dashboards interactivos en React y TypeScript para visualizar métricas en tiempo real.</li>
+                      <li>Contribui en el backend de proyectos utilizando Express y TypeScript, asegurando la escalabilidad
+                      y rendimiento.</li>
+                    </ul>
+                  </div>
+              </li>
+              <li className="group mb-5 ms-3 lg:ms-6 p-3 bg-slate-900 border border-slate-900 rounded-lg transition-all duration-300 ease-in-out lg:hover:bg-slate-800/50 lg:hover:border-slate-800 lg:hover:shadow-sm lg:hover:shadow-slate-800 lg:hover:!opacity-100 lg:group-hover/list:opacity-40"> 
+                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
+                  <svg 
+                    className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" 
+                    aria-hidden="true" 
+                    xmlns="http://www.w3.org/2000/svg" 
+                    fill="currentColor" 
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                  </svg>
+                </span>
+                <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-slate-200 hover:text-teal-200 gap-x-1">
+                  Practicante Front End - Digital Buho S.A.C
+                  <span>
+                    <GoArrowUpRight 
                       className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out" 
                       strokeWidth={0.6}
-                    /></span>
-                  </h2>
-                  
-                  <div className="space-y-2">
-                    <p className='text-sm'>
-                      Contribuí al diseño y desarrollo de prototipos interactivos en Figma para una aplicación móvil,
-                      alineados con las necesidades de la empresa y las mejores prácticas de diseño UX/UI.
-                    </p>
-                    <p className='text-sm'>
-                      Brindé soporte en la creación y mejora del diseño web de aplicaciones empresariales,
-                      optimizando la experiencia de usuario y la coherencia visual.
-                    </p>
-                  </div>
-                  
+                  />
+                  </span>
+                </h3>
+                <time className="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                  Febrero 2024 - Mayo 2024
+                </time>
+                <div className="space-y-2 text-sm font-normal text-slate-400 dark:text-slate-400">
+                  <ul className="list-disc list-inside">
+                    <li>Contribuí al diseño y desarrollo de prototipos interactivos en Figma para una aplicación móvil, alineados con las necesidades de la empresa y las mejores prácticas de diseño UX/UI.</li>
+                    <li>Brindé soporte en la creación y mejora del diseño web de aplicaciones empresariales, optimizando la experiencia de usuario y la coherencia visual.</li>
+                  </ul>
                 </div>
-              </div>
+
+                
+              </li>
             </ul>
 
             <ul 
@@ -148,10 +150,10 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                     </div>
 
                     {/* Contenedor del botón alineado abajo */}
-                    <div className="flex flex-row md:flex-col lg:flex-col h-full justify-center md:justify-end items-center space-x-2 md:space-x-0 space-y-2 mt-2 md:mt-0">
+                    <div className="flex flex-row md:flex-col lg:flex-col h-full justify-center md:justify-end items-center space-x-2 md:space-x-0 space-y-0 md:space-y-2 mt-2 md:mt-0 ">
                       {proyecto.id !== '1' && (
                         <button 
-                          className="flex justify-between w-[160px] bg-slate-500 px-4 py-2 rounded-xl items-center gap-2 text-white transition-all duration-300 ease-in-out hover:scale-105 border border-slate-900 hover:border-slate-500 hover:bg-slate-200 hover:text-teal-900"
+                          className="flex justify-between w-max-[160px] bg-slate-500 px-4 py-2 rounded-xl items-center gap-3 text-white transition-all duration-300 ease-in-out hover:scale-105 border border-slate-900 hover:border-slate-500 hover:bg-slate-200 hover:text-teal-900"
                           onClick={() => window.open(proyecto.link, "_blank")}
                         >
                           Ver Proyecto
@@ -161,7 +163,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                         </button>
                       )}
                       <button 
-                        className="flex justify-between w-[160px] bg-black/50 backdrop-blur-md px-4 py-2 rounded-xl items-center gap-2 text-slate-200 transition-all duration-300 ease-in-out hover:scale-105 border border-slate-900 hover:border-slate-950 hover:bg-black hover:text-white"
+                        className="flex justify-between w-max-[160px] bg-black/50 backdrop-blur-md px-4 py-2 rounded-xl items-center gap-2 text-slate-200 transition-all duration-300 ease-in-out hover:scale-105 border border-slate-900 hover:border-slate-950 hover:bg-black hover:text-white"
                         onClick={() => window.open(proyecto.link_github, "_blank")}
                       >
                         Ver en GitHub
@@ -173,7 +175,8 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                   </header>
 
                     <div className=''>
-                      <h2 className='flex items-center mb-3 gap-x-1 text-slate-200 group-hover:text-teal-200 font-bold text-lg'>{proyecto.title} 
+                      <h2 className='flex items-center mb-3 gap-x-1 text-slate-200 group-hover:text-teal-200 font-bold text-lg'>
+                        {proyecto.title} 
                         <span>
                           <GoArrowUpRight 
                             className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform ease-in-out" 
