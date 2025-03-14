@@ -11,7 +11,7 @@ export default function PrimerColumna() {
         <div className="pr-3 pl-3 bg-white dark:bg-slate-900 lg:fixed top-24 lg:h-5/6 flex flex-col justify-between transition-colors">
             <div className='max-w-[600px]'>
                 <h1 
-                    className='text-5xl font-black text-cyan-900 dark:text-slate-100 hover:cursor-pointer pl-2 transition-colors'
+                    className='text-5xl font-black text-cyan-950 dark:text-slate-100 hover:cursor-pointer pl-2 transition-colors'
                 >
                     <span>
                     <Typewriter
@@ -31,7 +31,7 @@ export default function PrimerColumna() {
                     initial={{ opacity: 0, x: -50 }} // Inicia invisible y desplazado a la izquierda
                     animate={{ opacity: 1, x: 0 }} // Se hace visible y se mueve a su posición
                     transition={{ duration: 1, ease: 'easeOut' }} // Duración y tipo de animación
-                    className="mt-4 md:mt-2 mb-5 text-xl font-medium text-cyan-800 dark:text-slate-200 pl-2"
+                    className="mt-4 md:mt-2 mb-5 text-xl font-medium text-cyan-900 dark:text-slate-200 pl-2 transition-colors"
                     >
                     Ingeniero de Software con Inteligencia Artificial
                 </motion.h3>
@@ -40,7 +40,7 @@ export default function PrimerColumna() {
                     initial={{ opacity: 0, x: -50 }} // Inicia invisible y desplazado a la izquierda
                     animate={{ opacity: 1, x: 0 }} // Se hace visible y se mueve a su posición
                     transition={{ duration: 1, ease: 'easeOut' }} // Duración y tipo de animación
-                    className='max-w-[400px] text-gray-600 dark:text-slate-400 pl-2 text-base font-light'
+                    className='max-w-[400px] text-gray-600 dark:text-slate-400 pl-2 text-base font-light transition-colors'
                 >
                     Apasionado por la tecnología, el aprendizaje continuo y la optimización de procesos.
                 </motion.p>
@@ -50,7 +50,7 @@ export default function PrimerColumna() {
                 </p>
 
                 <div className='mt-12 md:mt-20'>
-                    <ul className='space-y-3 text-slate-700 dark:text-slate-300'>
+                    <ul className='space-y-3 text-gray-700 dark:text-slate-300 transition-colors'>
                         <li className='flex items-center gap-x-3 p-2'>
                             <FaPhone size={19}/>
                             <span className='text-[17px]'>+51 970828781 </span>
@@ -61,12 +61,12 @@ export default function PrimerColumna() {
                             <span className='text-[17px]'> mauriciopalomino39@gmail.com </span>
                         </li>
                         <li
-                            className='flex items-center gap-x-3 group max-w-[330px] p-2 hover:cursor-pointer border border-transparent hover:border-slate-800 hover:shadow-lg hover:shadow-slate-700 hover:transition-shadow duration-500 ease-in-out rounded-md hover:text-slate-100 ' 
+                            className='flex items-center gap-x-3 group max-w-[330px] p-2 cursor-pointer border border-transparent dark:hover:border-slate-800 hover:shadow-lg hover:shadow-slate-700 transition-shadow duration-500 ease-in-out rounded-md hover:text-gray-900 dark:hover:text-slate-100' 
                             onClick={() => window.open("https://drive.google.com/file/d/1IMSP4gDMxa-DUwpgOMqaLlIKMf0dXcNb/view?usp=sharing", "_blank")}
                         >
                             <BsFileEarmarkPdf size={23}/>
                             <span
-                                className="text-[17px] group-hover:underline transition-all duration-1500 ease-in-out"
+                                className="text-[17px] group-hover:underline"
                             >
                                 Ver CV-MauricioPalomino
                             </span>
@@ -86,7 +86,7 @@ export default function PrimerColumna() {
                     )
                     }
                 >
-                    <FaLinkedin className="hover:text-cyan-950  dark:hover:text-emerald-100" size={30} />
+                    <FaLinkedin className="hover:text-cyan-950  dark:hover:text-emerald-100" size={32} />
                 </li>
                 <li
                     className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
@@ -94,13 +94,13 @@ export default function PrimerColumna() {
                     window.open('https://wa.me/970828781?', '_blank')
                     }
                 >
-                    <FaWhatsapp className=" hover:text-emerald-100" size={30} />
+                    <FaWhatsapp className=" hover:text-cyan-950  dark:hover:text-emerald-100" size={32} />
                 </li>
                 <li
                     className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
                     onClick={() => window.open('https://github.com/M4UR1CIO', '_blank')}
                 >
-                    <FaGithub className=" hover:text-emerald-100" size={30} />
+                    <FaGithub className=" hover:text-cyan-950  dark:hover:text-emerald-100" size={32} />
                 </li>
             </ul>
         </div>

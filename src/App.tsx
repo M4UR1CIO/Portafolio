@@ -45,13 +45,14 @@ function App() {
         <div
           className="lg:hidden pointer-events-none fixed inset-0 z-50 transition duration-300"
           style={{
-            background: "radial-gradient(700px circle at 0px 0px, rgba(29, 78, 216, 0.15), transparent 80%)"
+            background:isDark ? 
+              "radial-gradient(700px circle at 0% 0%, rgba(29, 78, 216, 0.15), transparent 80%)":
+              "radial-gradient(700px circle at 0% 0%, rgba(0, 0, 0, 0.30), transparent 80%)"
+
           }}
         ></div>
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-4 w-full max-w-[1200px]`}>
-          
-          
 
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-4 w-full max-w-[1200px]`}>  
           <div
             className={`z-10 absolute w-[900px] h-[900px] rounded-full pointer-events-none blur-3xl ease-in-out hidden lg:block ${isDark ? styles.gradientRadialDark : styles.gradientRadialLight}`}
             style={{ left: `${position.x}px`, top: `${position.y}px` }}

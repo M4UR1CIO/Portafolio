@@ -66,7 +66,7 @@ export default function Header({isDark, setIsDark}: HeaderProps) {
                 {/* Menú de navegación principal */}
                 <ul className="p-1 flex gap-x-1 md:gap-x-5 lg:gap-x-10 text-sm lg:text-base font-semibold uppercase">
                     <a 
-                        className={`${ activeSection === "sobremi" ? "text-slate-100 border-b-2 border-slate-200 scale-105" : "text-slate-500"
+                        className={`${ activeSection === "sobremi" ? "text-white dark:text-slate-100 border-b-2 border-gray-950 dark:border-slate-200 scale-105 transition-colors" : "text-gray-400 dark:text-slate-500 transition-colors"
                         } p-2 hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                         href='#inicio'
                         onClick={(e) => handleSmoothScroll(e,'sobremi', 100)}
@@ -74,7 +74,7 @@ export default function Header({isDark, setIsDark}: HeaderProps) {
                         Sobre Mí
                     </a>
                     <a 
-                        className={`${ activeSection === "experiencia" ? "text-slate-100 border-b-2 border-slate-200 scale-105" : "text-slate-500"
+                        className={`${ activeSection === "experiencia" ? "text-white dark:text-slate-100 border-b-2 border-gray-950 dark:border-slate-200 scale-105 transition-colors" : "text-gray-400 dark:text-slate-500 transition-colors"
                           } p-2 hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                         href='#experiencia'
                         onClick={(e) => handleSmoothScroll(e,'experiencia', 100)}
@@ -82,7 +82,7 @@ export default function Header({isDark, setIsDark}: HeaderProps) {
                         Experiencia
                     </a>
                     <a 
-                        className={`${ activeSection === "proyectos" ? "text-slate-100 border-b-2 border-slate-200 scale-105" : "text-slate-500"
+                        className={`${ activeSection === "proyectos" ? "text-white dark:text-slate-100 border-b-2 border-gray-950 dark:border-slate-200 scale-105 transition-colors" : "text-gray-400 dark:text-slate-500 transition-colors"
                         } p-2 hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                         href='#proyectos'
                         onClick={(e) => handleSmoothScroll(e,'proyectos', 100)}
@@ -90,7 +90,7 @@ export default function Header({isDark, setIsDark}: HeaderProps) {
                         Proyectos
                     </a>
                 </ul>
-                <div className="w-[69px] md:w-[89px] h-10 bg-white dark:bg-slate-400/30 rounded-full flex items-center transition-all duration-500">
+                <div className="w-[69px] md:w-[89px] h-10 bg-white/30 dark:bg-slate-400/30 rounded-full flex items-center transition-all duration-500">
                     <button 
                         className={`flex h-9 w-9 rounded-full ml-0.5 ${ isDark === true ? "bg-slate-950": 'bg-gray-200 translate-x-7 md:translate-x-12'} transition-all duration-500 justify-center items-center cursor-pointer`}
                         onClick={() => setIsDark(!isDark)}
