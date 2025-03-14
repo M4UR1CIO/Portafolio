@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './styles/Gradient.module.css';
 import Header from './components/Header';
 import PrimerColumna from './components/PrimerColumna';
@@ -6,8 +6,23 @@ import SegundaColumna from './components/SegundaColumna';
 import { proyectos } from './data/Proyectos';
 
 function App() {
-
+  const[ isDark, setIsDark ] = useState(true)
   const[ position, setPosition ] = useState({x:0 , y:0})
+
+  useEffect(() => {
+          const savedTheme = localStorage.getItem('theme')
+          setIsDark(savedTheme === 'dark')
+      }, []);
+  
+      useEffect(() => {
+          if(isDark) {
+              document.documentElement.classList.add("dark"); // Agrega "dark" a <html>
+              localStorage.setItem("theme", "dark"); // Guarda "dark" en localStorage
+          } else {
+              document.documentElement.classList.remove("dark"); // Quita "dark" de <html>
+              localStorage.setItem("theme", "light"); // Guarda "light" en localStorage
+          }
+      }, [isDark]);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     setPosition({
@@ -19,11 +34,11 @@ function App() {
   return (
     <>
       <header className="z-50 sticky top-0">
-        <Header />
+        <Header isDark={isDark} setIsDark={setIsDark}/>
       </header>
 
       <section
-        className={`pt-5 md:pt-10 bg-slate-900 min-h-screen flex justify-center overflow-hidden relative`}
+        className={`pt-5 md:pt-10 bg-white dark:bg-slate-900 min-h-screen flex justify-center overflow-hidden relative transition-colors`}
         onMouseMove={handleMouseMove}
       >
         {/* Efecto de iluminación en la esquina superior izquierda */}
@@ -38,7 +53,7 @@ function App() {
           
 
           <div
-            className={`z-10 absolute w-[900px] h-[900px] rounded-full pointer-events-none blur-3xl ease-in-out ${styles.gradientRadial} hidden lg:block`}
+            className={`z-10 absolute w-[900px] h-[900px] rounded-full pointer-events-none blur-3xl ease-in-out hidden lg:block ${isDark ? styles.gradientRadialDark : styles.gradientRadialLight}`}
             style={{ left: `${position.x}px`, top: `${position.y}px` }}
           ></div>
 

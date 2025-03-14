@@ -28,9 +28,9 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
   return (
     <>
         {/* Segunda columna (Scroll) */}
-        <div className="bg-slate-900 text-slate-400 mt-20 lg:mt-3 lg:pl-0 lg:pr-1 mb-10 lg:overflow-y-auto">
+        <div className="bg-white dark:bg-slate-900 text-slate-400 mt-20 lg:mt-3 lg:pl-0 lg:pr-1 mb-10 lg:overflow-y-auto transition-colors">
             <div
-              id='inicio' 
+              id='sobremi' 
               className='pl-5 lg:mt-12 pt-1 pr-5 lg:pl-0 lg:pr-0 mb-24 md:mb-32 lg:mb-40 space-y-12'
             >
               <div className="space-y-5">
@@ -50,7 +50,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                   {tecnologias.map((tech, index) => (
                     <div
                       key={index}
-                      className="group relative flex flex-col items-center justify-center bg-slate-900 py-4 rounded-lg shadow-sm hover:shadow-slate-500 hover:scale-105 transition-all duration-300 text-2xl lg:hover:!opacity-100 lg:group-hover/list:opacity-40 cursor-pointer"
+                      className="group relative flex flex-col items-center justify-center bg-slate-900 py-4 rounded-lg shadow-xs hover:shadow-slate-500 hover:scale-105 transition-all duration-300 text-2xl lg:hover:opacity-100! lg:group-hover/list:opacity-40 cursor-pointer"
                       onClick={() => window.open(tech.link, '_blank')}
                     >
                       {tech.icono}
@@ -66,7 +66,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
               id="experiencia"
               className="ml-5 pr-4 relative border-s border-gray-200 dark:border-gray-700 lg:ml-3 group/list space-y-5 mb-24 md:mb-32 lg:mb-40"
             >
-              <li className="group mb-5 ms-3 lg:ms-6 p-3 bg-slate-900 border border-slate-900 rounded-lg transition-all duration-300 ease-in-out lg:hover:bg-slate-800/50 lg:hover:border-slate-800 lg:hover:shadow-sm lg:hover:shadow-slate-800 lg:hover:!opacity-100 lg:group-hover/list:opacity-40"> 
+              <li className="group mb-5 ms-3 lg:ms-6 p-3 bg-slate-900 border border-slate-900 rounded-lg transition-all duration-300 ease-in-out lg:hover:bg-slate-800/50 lg:hover:border-slate-800 lg:hover:shadow-xs lg:hover:shadow-slate-800 lg:hover:opacity-100! lg:group-hover/list:opacity-40"> 
            
                 <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                   <svg className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -94,7 +94,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                     </ul>
                   </div>
               </li>
-              <li className="group mb-5 ms-3 lg:ms-6 p-3 bg-slate-900 border border-slate-900 rounded-lg transition-all duration-300 ease-in-out lg:hover:bg-slate-800/50 lg:hover:border-slate-800 lg:hover:shadow-sm lg:hover:shadow-slate-800 lg:hover:!opacity-100 lg:group-hover/list:opacity-40"> 
+              <li className="group mb-5 ms-3 lg:ms-6 p-3 bg-slate-900 border border-slate-900 rounded-lg transition-all duration-300 ease-in-out lg:hover:bg-slate-800/50 lg:hover:border-slate-800 lg:hover:shadow-xs lg:hover:shadow-slate-800 lg:hover:opacity-100! lg:group-hover/list:opacity-40"> 
                 <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -start-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
                   <svg 
                     className="w-2.5 h-2.5 text-blue-800 dark:text-blue-300" 
@@ -137,7 +137,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                 <li 
                   key={proyecto.id}
                 >
-                  <div className="group relative lg:grid p-3 bg-slate-800/50 lg:bg-transparent hover:bg-slate-800/50 border border-slate-900 hover:border-slate-800 rounded-lg hover:shadow-sm hover:shadow-slate-800 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 scale-105 lg:scale-100 items-start lg:hover:!opacity-100 lg:group-hover/list:opacity-40">
+                  <div className="group relative lg:grid p-3 bg-slate-800/50 lg:bg-transparent hover:bg-slate-800/50 border border-slate-900 hover:border-slate-800 rounded-lg hover:shadow-xs hover:shadow-slate-800 transition-all duration-300 ease-in-out mx-5 md:mx-7 lg:mx-0 scale-105 lg:scale-100 items-start lg:hover:opacity-100! lg:group-hover/list:opacity-40">
 
                   <header className="grid md:grid-flow-col lg:pt-1 text-slate-500 uppercase text-sm font-medium pb-4 items-center justify-center md:justify-between">
                     {/* Imagen con efecto zoom */}

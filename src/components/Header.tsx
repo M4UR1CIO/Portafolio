@@ -1,23 +1,13 @@
-import { useState, useEffect } from 'react';
-import { FaLinkedin, FaWhatsapp, FaGithub, FaBars } from 'react-icons/fa'; 
+import { useState, useEffect, Dispatch } from 'react';
+import { IoSunny, IoMoon } from "react-icons/io5";
 
-export default function Header() {
-    const [menuOpen, SetMenuOpen] = useState(false);
+type HeaderProps = {
+    isDark : boolean
+    setIsDark : Dispatch<React.SetStateAction<boolean>>
+}
+
+export default function Header({isDark, setIsDark}: HeaderProps) {
     const [activeSection, setActiveSection] = useState<string | null>(null);
-
-    useEffect(() => {
-        // Cuando el menu esta abierto, desactiva el scroll
-        if (menuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = '';
-        }
-
-        // Limpieza al desmontar el componente
-        return () => {
-            document.body.style.overflow = '';
-        };
-    } ,[menuOpen]);
 
     const handleSmoothScroll = (
         e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, 
@@ -43,7 +33,7 @@ export default function Header() {
       useEffect(() => {
         const handleScroll = () => {
           // Seleccionamos los elementos con los IDs
-          const elements = document.querySelectorAll("#inicio, #experiencia, #proyectos");
+          const elements = document.querySelectorAll("#sobremi, #experiencia, #proyectos");
           let maxVisibleHeight = 0;
           let mostVisibleElement: string | null = null;
     
@@ -68,24 +58,18 @@ export default function Header() {
     
   return (
     <>
-        <div className='bg-slate-950/50 lg:bg-slate-950/40 backdrop-blur-md z-50 relative'>
+        <div className='bg-gray-800/50 dark:bg-slate-950/50 lg: dark:lg:bg-slate-950/40 backdrop-blur-md z-50 relative transition-colors'>
         <div className="px-2 pt-2 pb-1 lg:p-0 xl:max-w-[1200px] m-auto grid grid-cols-1 lg:grid-cols-2">
             <div></div>
     
             <div className=" flex justify-between items-center">
                 {/* Menú de navegación principal */}
-                <ul className="p-1 flex gap-x-3 md:gap-x-5 lg:gap-x-10 text-sm lg:text-base font-semibold uppercase">
+                <ul className="p-1 flex gap-x-1 md:gap-x-5 lg:gap-x-10 text-sm lg:text-base font-semibold uppercase">
                     <a 
-                        className={`${ activeSection === "inicio" ? "text-slate-100 border-b-2 border-slate-200 scale-105" : "text-slate-500"
+                        className={`${ activeSection === "sobremi" ? "text-slate-100 border-b-2 border-slate-200 scale-105" : "text-slate-500"
                         } p-2 hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                         href='#inicio'
-                        onClick={(e) => {
-                            if (menuOpen) {
-                                e.preventDefault();
-                            } else {
-                                handleSmoothScroll(e, 'inicio', window.innerWidth < 768 ? 100 : 150)
-                            }
-                        }}
+                        onClick={(e) => handleSmoothScroll(e,'sobremi', 100)}
                     >
                         Sobre Mí
                     </a>
@@ -93,13 +77,7 @@ export default function Header() {
                         className={`${ activeSection === "experiencia" ? "text-slate-100 border-b-2 border-slate-200 scale-105" : "text-slate-500"
                           } p-2 hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                         href='#experiencia'
-                        onClick={(e) => {
-                            if (menuOpen) {
-                                e.preventDefault();
-                            } else {
-                                handleSmoothScroll(e, 'experiencia', 100)
-                            }
-                        }}
+                        onClick={(e) => handleSmoothScroll(e,'experiencia', 100)}
                     >
                         Experiencia
                     </a>
@@ -107,109 +85,33 @@ export default function Header() {
                         className={`${ activeSection === "proyectos" ? "text-slate-100 border-b-2 border-slate-200 scale-105" : "text-slate-500"
                         } p-2 hover:cursor-pointer hover:scale-105 transition-transform duration-300 ease-in-out`}
                         href='#proyectos'
-                        onClick={(e) => {
-                            if (menuOpen) {
-                                e.preventDefault();
-                            } else {
-                                handleSmoothScroll(e, 'proyectos', 100)
-                            }
-                        }}
+                        onClick={(e) => handleSmoothScroll(e,'proyectos', 100)}
                     >
                         Proyectos
                     </a>
                 </ul>
+                <div className="w-[69px] md:w-[89px] h-10 bg-white dark:bg-slate-400/30 rounded-full flex items-center transition-all duration-500">
+                    <button 
+                        className={`flex h-9 w-9 rounded-full ml-0.5 ${ isDark === true ? "bg-slate-950": 'bg-gray-200 translate-x-7 md:translate-x-12'} transition-all duration-500 justify-center items-center cursor-pointer`}
+                        onClick={() => setIsDark(!isDark)}
+                    >
+                        {isDark ? (
+                            <IoMoon
+                                className="text-white"
+                                size={28}
+                            />
+                        ):(
+                            <IoSunny
+                                className="text-yellow-500"
+                                size={30}
+                        />
+                        )}
                         
-                {/* Ícono de despliegue para dispositivos móviles */}
-                <div className="md:hidden flex items-center pr-1">
-                <button
-                    onClick={() => SetMenuOpen(!menuOpen)}
-                    className={`transition-transform duration-300 hover:scale-110 ease-in-out ${
-                    menuOpen ? 'text-emerald-200' : 'text-slate-300'
-                    }`}
-                >
-                    <FaBars size={26}/> 
-                </button>
+                    </button>
                 </div>
-    
-                {/* Íconos visibles siempre en pantallas grandes */}
-                <ul className="hidden md:flex gap-x-1 md:gap-x-4">
-                    <li
-                        className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
-                        onClick={() =>
-                        window.open(
-                            'https://www.linkedin.com/in/mauricio-palomino-ayala-16a24a274/',
-                            '_blank'
-                        )
-                        }
-                    >
-                        <FaLinkedin className="text-slate-300 hover:text-emerald-100" size={28} />
-                    </li>
-                    <li
-                        className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
-                        onClick={() =>
-                        window.open('https://wa.me/970828781?', '_blank')
-                        }
-                    >
-                        <FaWhatsapp className="text-slate-300 hover:text-emerald-100" size={28} />
-                    </li>
-                    <li
-                        className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
-                        onClick={() => window.open('https://github.com/M4UR1CIO', '_blank')}
-                    >
-                        <FaGithub className="text-slate-300 hover:text-emerald-100" size={28} />
-                    </li>
-                </ul>
             </div>
             </div>
         </div>
-        
-        {/* Fondo oscuro */}
-        {menuOpen && (
-            <div 
-                className="fixed inset-0 bg-slate-950/20 backdrop-blur-md z-30 transition-opacity duration-500" 
-                onClick={() => SetMenuOpen(false)}
-            />
-        
-        )}               
-
-        {/* Menú */}
-        <div
-            className={`md:hidden ttransition-all duration-500 ease-in-out transform top-0 ${
-                menuOpen ? 'translate-y-14 opacity-100' : '-translate-y-10 opacity-0'
-            }  bg-slate-950/50 backdrop-blur-md absolute left-0 right-0 py-3 rounded-b-2xl z-30 `}
-        >
-            <ul className="flex justify-around items-center">
-                <li className="flex flex-col items-center gap-y-1">
-                    <FaLinkedin 
-                        className="text-slate-300 hover:text-emerald-200 hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out" 
-                        size={28} 
-                        onClick={() =>
-                            window.open('https://www.linkedin.com/in/mauricio-palomino-ayala-16a24a274/', '_blank')
-                        }
-                    />
-                    <span className="text-slate-200 text-sm">Linkedin</span>
-                </li>
-                <li className="flex flex-col items-center gap-y-1">
-                    <FaWhatsapp 
-                        className="text-slate-300 hover:text-emerald-200 hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out" 
-                        size={28} 
-                        onClick={() =>
-                            window.open('https://wa.me/970828781?text=Hola%20me%20interesa%20tu%20servicio', '_blank')
-                        }
-                    />
-                    <span className="text-slate-200 text-sm">WhatsApp</span>
-                </li>
-                <li className="flex flex-col items-center gap-y-1">
-                    <FaGithub 
-                        className="text-slate-300 hover:text-emerald-200 hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
-                        size={28} 
-                        onClick={() => window.open('https://github.com/M4UR1CIO', '_blank')}
-                    />
-                    <span className="text-slate-200 text-sm">GitHub</span>
-                </li>
-            </ul>
-        </div>
-
     </>
   )
 }
