@@ -50,7 +50,12 @@ export default function PrimerColumna() {
                 </p>
 
                 <div className='mt-12 md:mt-20'>
-                    <ul className='space-y-3 text-gray-700 dark:text-slate-300 transition-colors'>
+                    <motion.ul
+                        initial={{ opacity: 0, x: -50 }} // Inicia invisible y desplazado a la izquierda
+                        animate={{ opacity: 1, x: 0 }} // Se hace visible y se mueve a su posición
+                        transition={{ duration: 1, ease: 'easeOut' }} // Duración y tipo de animación
+                        className='space-y-3 text-gray-700 dark:text-slate-300 transition-colors'
+                    >
                         <li className='flex items-center gap-x-3 p-2'>
                             <FaPhone size={19}/>
                             <span className='text-[17px]'>+51 970828781 </span>
@@ -72,11 +77,17 @@ export default function PrimerColumna() {
                             </span>
                             
                         </li>
-                    </ul>
+                    </motion.ul>
+                    
                 </div>
             </div>
-
-            <ul className="flex gap-x-3 md:gap-x-5 pl-2 mt-20 lg:mt-auto text-cyan-800 dark:text-slate-300">
+                
+            <motion.ul
+                initial={{ opacity: 0, y: 50 }} // Inicia invisible y desplazado a la izquierda
+                animate={{ opacity: 1, y: 0 }} // Se hace visible y se mueve a su posición
+                transition={{ duration: 1, ease: 'easeOut' }} // Duración y tipo de animación
+                className='flex gap-x-3 md:gap-x-5 pl-2 mt-20 lg:mt-auto text-cyan-800 dark:text-slate-300'
+            >
                 <li
                     className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
                     onClick={() =>
@@ -102,7 +113,8 @@ export default function PrimerColumna() {
                 >
                     <FaGithub className=" hover:text-cyan-950  dark:hover:text-emerald-100" size={32} />
                 </li>
-            </ul>
+            </motion.ul>
+            
         </div>
     </>
   )

@@ -15,7 +15,7 @@ export const proyectos : Proyectos[] = [
         id: '2', 
         name: 'proyecto2', 
         title : 'Portafolio Personal', 
-        content: 'Portafolio desarrollado por mi mismo, este muestra y presenta mis proyectos realizados.',
+        content: 'Portafolio que muestra y presenta mis habilidades y mis proyectos realizados.',
         imagen: ['Portafolio/Portafolio-Dark', 'Portafolio/Portafolio-Light'],
         link: 'https://portafolio-mauriciopalomino.vercel.app/',
         link_github: 'https://github.com/M4UR1CIO/Portafolio',
