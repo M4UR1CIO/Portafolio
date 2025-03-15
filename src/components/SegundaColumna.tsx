@@ -4,6 +4,10 @@ import { GoArrowUpRight } from "react-icons/go";
 import { FaGithub, FaGlobe } from "react-icons/fa";
 import { FaReact, FaPython, FaHtml5, FaCss3Alt, FaJs, FaDatabase } from "react-icons/fa";
 import { SiTailwindcss, SiMysql, SiPostgresql, SiFlask, SiTypescript } from "react-icons/si";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Scrollbar, Mousewheel } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/scrollbar';
 
 type SegundaColumnaProps = {
     proyectos: Proyectos[]
@@ -150,18 +154,39 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                   <header className="grid md:grid-flow-col lg:pt-1 text-slate-500 uppercase text-sm font-medium pb-4 items-center justify-center md:justify-between">
                     {/* Imagen con efecto zoom */}
                     <div className="w-full md:w-96 lg:w-96 h-auto overflow-hidden rounded-md border-2 border-double dark:border-slate-700 transition-all duration-300 ease-in-out group-hover:border-teal-950 dark:group-hover:border-teal-200">
-                      <img
-                        className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110"
-                        src={`/images/${proyecto.imagen}.png`}
-                        alt={proyecto.name}
-                      />
+                    <div className="w-full max-w-md mx-auto">
+                      {/* Componente Swiper para el carrusel */}
+                      <Swiper
+                        scrollbar={{
+                          hide: true,
+                        }}
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        mousewheel={true}
+                        modules={[ Scrollbar, Mousewheel ]}
+                        effect="fade" 
+                        loop={true}
+                        className="text-black"
+                      >
+                        {proyecto.imagen.map((img, index) => (
+                          <SwiperSlide key={index}>
+                            <img
+                              className="hover:scale-105 duration-300 ease-in-out"
+                              src={`/images/${img}.png`}
+                              alt={`${proyecto.name} - ${index + 1}`}
+                            />
+                          </SwiperSlide>
+                        ))}
+                      </Swiper>
+                    </div>
+                      
                     </div>
 
                     {/* Contenedor del botón alineado abajo */}
                     <div className="flex flex-row md:flex-col lg:flex-col h-full justify-center md:justify-end items-center space-x-2 md:space-x-0 space-y-0 md:space-y-2 mt-2 md:mt-0 ">
                       {proyecto.id !== '1' && (
                         <button 
-                          className="flex justify-between w-max-[160px] bg-slate-300 dark:bg-slate-500 px-4 py-2 rounded-xl items-center gap-3 text-gray-900 dark:text-white transition-all duration-300 ease-in-out hover:scale-105 border border-slate-900 hover:border-slate-500 hover:bg-gray-700 dark:hover:bg-slate-200 hover:text-slate-100 dark:hover:text-teal-900"
+                          className="flex justify-between w-max-[160px] bg-slate-300 dark:bg-slate-500 px-4 py-2 rounded-xl items-center gap-3 text-gray-900 dark:text-white transition-all duration-300 ease-in-out hover:scale-105 border border-slate-900 hover:border-slate-500 hover:bg-gray-700 dark:hover:bg-slate-200 hover:text-slate-100 dark:hover:text-teal-900 cursor-pointer"
                           onClick={() => window.open(proyecto.link, "_blank")}
                         >
                           Ver Proyecto
@@ -171,7 +196,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                         </button>
                       )}
                       <button 
-                        className="flex justify-between w-max-[160px] bg-black/90 dark:bg-black/50 backdrop-blur-md px-4 py-2 rounded-xl items-center gap-2 text-slate-200 transition-all duration-300 ease-in-out hover:scale-105 border border-slate-900 hover:border-slate-950 hover:bg-slate-300 dark:hover:bg-black hover:text-black dark:hover:text-white"
+                        className="flex justify-between w-max-[160px] bg-black/90 dark:bg-black/50 backdrop-blur-md px-4 py-2 rounded-xl items-center gap-2 text-slate-200 transition-all duration-300 ease-in-out hover:scale-105 border border-slate-900 hover:border-slate-950 hover:bg-slate-300 dark:hover:bg-black hover:text-black dark:hover:text-white cursor-pointer"
                         onClick={() => window.open(proyecto.link_github, "_blank")}
                       >
                         Ver en GitHub
@@ -198,10 +223,10 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
                       </p>
                       
                       <ul className="flex flex-wrap gap-3 text-sm pt-1 lg:py-1 items-center">
-                        {proyecto.tecnologias.map((tecnologia, index )=> (
+                        {proyecto.tecnologias.map((tecnologia, index ) => (
                           <li
                             key={index}
-                            className="p-1 bg-teal-700/20 dark:bg-teal-400/10 text-teal-700 dark:text-teal-300 rounded-xl px-3 font-medium transition-colors"
+                            className="p-1 bg-teal-700/20 dark:bg-teal-400/10 text-teal-800 dark:text-teal-300 rounded-xl px-3 font-medium transition-colors"
                           >
                             {tecnologia}
                           </li>

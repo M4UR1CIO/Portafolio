@@ -47,7 +47,7 @@ function App() {
           style={{
             background:isDark ? 
               "radial-gradient(700px circle at 0% 0%, rgba(29, 78, 216, 0.15), transparent 80%)":
-              "radial-gradient(700px circle at 0% 0%, rgba(0, 0, 0, 0.30), transparent 80%)"
+              "radial-gradient(700px circle at 0% 0%, rgba(0, 0, 0, 0.20), transparent 80%)"
 
           }}
         ></div>

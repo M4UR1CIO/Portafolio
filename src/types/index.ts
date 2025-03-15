@@ -3,7 +3,7 @@ export type Proyectos = {
     name: string
     title: string
     content: string
-    imagen: string
+    imagen: string[]
     link: string
     link_github: string
     tecnologias: string[]
