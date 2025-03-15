@@ -3,6 +3,7 @@ import { MdEmail } from "react-icons/md";
 import { BsFileEarmarkPdf } from "react-icons/bs"; 
 import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'framer-motion'; 
+import { Tooltip } from 'react-tooltip'; 
 
 export default function PrimerColumna() {
   return (
@@ -90,28 +91,45 @@ export default function PrimerColumna() {
             >
                 <li
                     className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
-                    onClick={() =>
-                    window.open(
-                        'https://www.linkedin.com/in/mauricio-palomino-ayala-16a24a274/',
-                        '_blank'
-                    )
-                    }
+                    onClick={() => window.open('https://www.linkedin.com/in/mauricio-palomino-ayala-16a24a274/', '_blank')}
+                    data-tooltip-id='linkedin-tooltip'
                 >
-                    <FaLinkedin className="hover:text-cyan-950  dark:hover:text-emerald-100" size={32} />
+                    <FaLinkedin className="hover:text-cyan-950 dark:hover:text-emerald-100" size={32} />
+                    <Tooltip 
+                        id="linkedin-tooltip" 
+                        place="top" 
+                        style={{backgroundColor: "#CBC3CD", color: "#000", padding: 2, fontSize: 12}}
+                    >
+                        Linkedin
+                    </Tooltip>
                 </li>
                 <li
                     className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
-                    onClick={() =>
-                    window.open('https://wa.me/970828781?', '_blank')
-                    }
+                    onClick={() => window.open('https://wa.me/970828781?', '_blank')}
+                    data-tooltip-id='whatsapp-tooltip'
                 >
                     <FaWhatsapp className=" hover:text-cyan-950  dark:hover:text-emerald-100" size={32} />
+                    <Tooltip
+                        id='whatsapp-tooltip'
+                        place='top'
+                        style={{backgroundColor: "#CBC3CD", color: "#000", padding: 2, fontSize: 12}}
+                    >
+                        Whatsapp
+                    </Tooltip>
                 </li>
                 <li
                     className="hover:cursor-pointer hover:scale-110 transition-transform duration-500 ease-in-out"
                     onClick={() => window.open('https://github.com/M4UR1CIO', '_blank')}
+                    data-tooltip-id='github-tooltip'
                 >
                     <FaGithub className=" hover:text-cyan-950  dark:hover:text-emerald-100" size={32} />
+                    <Tooltip
+                        id='github-tooltip'
+                        place='top'
+                        style={{backgroundColor: "#CBC3CD", color: "#000", padding: 2, fontSize: 12}}
+                    >
+                        GitHub
+                    </Tooltip>
                 </li>
             </motion.ul>
             
