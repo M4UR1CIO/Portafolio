@@ -45,12 +45,12 @@ export const proyectos : Proyectos[] = [
     { 
         id: '5', 
         name: 'proyecto5', 
-        title : 'Página Web de GuitarLA',
-        content: 'Pagina Web que muestra diferentes productos de GuitarLA, tiene un diseño minimalista y facil de usar.', 
-        imagen: ['GuitarLA/GuitarLA', 'GuitarLA/GuitarLA-2'],
-        link: 'https://guitar-la-eight.vercel.app/',
-        link_github: 'https://github.com/M4UR1CIO/GuitarLA',
-        tecnologias: ['TypeScript', 'React', 'CSS']
+        title : 'Gestión de Presupuesto',
+        content: 'Sistema web de un CRUD de Presupuestos, ademas de contar de un Login y muestra los presupuestos segun el usuario', 
+        imagen: ['Presupuestos/Presupuesto-1', 'Presupuestos/Presupuesto-2', 'Presupuestos/Presupuesto-3'],
+        link: 'https://presupuesto-zkn3.onrender.com',
+        link_github: 'https://github.com/M4UR1CIO/Presupuesto',
+        tecnologias: ['Python', 'Flask', 'JavaScript', 'CSS', 'PostgreSQL']
     },
     { 
         id: '6', 
