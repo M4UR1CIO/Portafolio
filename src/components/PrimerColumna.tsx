@@ -25,7 +25,6 @@ export default function PrimerColumna() {
                     delaySpeed={1000}
                   />
                     </span>
-                    
                 </h1>
 
                 <motion.h3
@@ -68,7 +67,7 @@ export default function PrimerColumna() {
                         </li>
                         <li
                             className='flex items-center gap-x-3 group max-w-[330px] p-2 cursor-pointer border border-transparent dark:hover:border-slate-800 hover:shadow-lg hover:shadow-slate-700 transition-shadow duration-500 ease-in-out rounded-md hover:text-gray-900 dark:hover:text-slate-100' 
-                            onClick={() => window.open("https://drive.google.com/file/d/1IMSP4gDMxa-DUwpgOMqaLlIKMf0dXcNb/view?usp=sharing", "_blank")}
+                            onClick={() => window.open("https://drive.google.com/file/d/1Kos517GOEAH0viMPBLT5DfFZclQWo-4p/view?usp=sharing", "_blank")}
                         >
                             <BsFileEarmarkPdf size={23}/>
                             <span
