@@ -39,12 +39,33 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
             >
               <div className="space-y-5">
                 <p>
-                Soy un desarrollador web apasionado por crear soluciones innovadoras y funcionales que combinan tecnología y diseño. Con experiencia en <span className='font-semibold text-cyan-900 dark:text-slate-300 transition-colors'>React, JavaScript, TypeScript, Python y Flask</span>, he desarrollado plataformas interactivas y bots inteligentes integrados con la <span className='font-semibold text-cyan-900 dark:text-slate-300 transition-colors'>API Graph de Meta</span>.
-              </p>
+                  Soy egresado técnico de{" "}
+                  <span className="font-semibold text-cyan-900 dark:text-slate-300 transition-colors">
+                    Ingeniería de Software con Inteligencia Artificial
+                  </span>{" "}
+                  y actualmente estudiante de Ingeniería de Sistemas. Cuento con
+                  experiencia en el desarrollo de aplicaciones web, integración de APIs,
+                  bases de datos y visualización de información.
+                </p>
 
-              <p>
-                Me especializo en el desarrollo <span className='font-semibold text-cyan-900 dark:text-slate-300 transition-colors'>frontend y backend</span>, enfocándome en la optimización de interfaces, la visualización de datos en tiempo real y la integración de sistemas seguros y escalables. Además, cuento con experiencia en el <span className='font-semibold text-cyan-900 dark:text-slate-300 transition-colors'>consumo y desarrollo de APIs REST</span>, permitiendo la conexión eficiente entre diversas aplicaciones y servicios.
-              </p>
+                <p>
+                  He trabajado con tecnologías como{" "}
+                  <span className="font-semibold text-cyan-900 dark:text-slate-300 transition-colors">
+                    React, TypeScript, JavaScript, Python, Flask y SQL
+                  </span>
+                  , participando tanto en el desarrollo de interfaces como en la
+                  implementación de funcionalidades backend y soluciones orientadas a la
+                  gestión de información.
+                </p>
+
+                <p>
+                  Me interesa aplicar la tecnología para{" "}
+                  <span className="font-semibold text-cyan-900 dark:text-slate-300 transition-colors">
+                    analizar información, optimizar procesos y apoyar la toma de decisiones
+                  </span>
+                  . Busco continuar desarrollándome en áreas como desarrollo de software,
+                  análisis de sistemas, gestión de procesos y soluciones empresariales.
+                </p>
               </div>
               
               <div>
@@ -239,7 +260,7 @@ export default function SegundaColumna({proyectos}: SegundaColumnaProps) {
             </ul>
             <div className="lg:mb-10 mt-20">
               <footer className="text-center text-sm text-gray-600 dark:text-slate-500 px-10 lg:px-0 transition-colors">
-                © 2025 Mauricio Palomino. Desarrollado con <span className="font-medium text-gray-900 dark:text-slate-400 transition-colors">React, TypeScript y Tailwind CSS</span>. Implementado en <span className="font-medium text-gray-900 dark:text-slate-400 transition-colors">Vercel</span>.
+                © 2026 Mauricio Palomino. Desarrollado con <span className="font-medium text-gray-900 dark:text-slate-400 transition-colors">React, TypeScript y Tailwind CSS</span>. Implementado en <span className="font-medium text-gray-900 dark:text-slate-400 transition-colors">Vercel</span>.
               </footer>
             </div>
           </div>

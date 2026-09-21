@@ -92,7 +92,7 @@ export default function Header({isDark, setIsDark}: HeaderProps) {
                 </ul>
                 <div className="w-[69px] md:w-[89px] h-10 bg-white/30 dark:bg-slate-400/30 rounded-full flex items-center transition-all duration-500">
                     <button 
-                        className={`flex h-9 w-9 rounded-full ml-0.5 ${ isDark === true ? "bg-slate-950 hover:bg-gray-100 text-white hover:text-yellow-500": 'bg-gray-200 translate-x-7 md:translate-x-12 hover:bg-black text-yellow-500 hover:text-white'} transition-all duration-500 ease-in-out justify-center items-center cursor-pointer `}
+                        className={`flex h-9 w-9 rounded-full ml-0.5 ${ isDark === true ? "bg-slate-950 hover:bg-gray-100 text-white hover:text-yellow-500": 'bg-gray-200 translate-x-7 md:translate-x-12 hover:bg-black text-yellow-500 hover:text-white'} transition-all duration-300 ease-in-out justify-center items-center cursor-pointer `}
                         onClick={() => setIsDark(!isDark)}
                     >
                         {isDark ? (
